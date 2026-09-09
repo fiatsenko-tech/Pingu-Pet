@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/fondos/Comedor.png" type="Texture" id=1]
+[ext_resource path="res://assets/Pez.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Pescado.gd" type="Script" id=3]
+
+[node name="Comedor" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Comedor"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Pescado" type="TextureButton" parent="."]
+margin_left = 557.0
+margin_top = 833.0
+margin_right = 1004.0
+margin_bottom = 1280.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 2 )
+script = ExtResource( 3 )
