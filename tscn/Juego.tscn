@@ -23,10 +23,10 @@ margin_bottom = 40.0
 position = Vector2( 551, 187 )
 
 [node name="ZonaComida" type="Area2D" parent="Pingu"]
-position = Vector2( -157, 782 )
+position = Vector2( -140, 787 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pingu/ZonaComida"]
-position = Vector2( 91, 58 )
+position = Vector2( 0, -1 )
 shape = SubResource( 1 )
 
 [node name="UI" type="Control" parent="."]
