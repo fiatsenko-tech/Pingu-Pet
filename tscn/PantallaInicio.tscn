@@ -16,33 +16,33 @@ rect_scale = Vector2( 4, 4 )
 text = "Welcome to Pingu Pet!"
 
 [node name="CampoNombre" type="LineEdit" parent="."]
-margin_left = 380.0
-margin_top = 729.0
-margin_right = 642.0
-margin_bottom = 781.0
+margin_left = 392.0
+margin_top = 893.0
+margin_right = 750.0
+margin_bottom = 969.0
 
 [node name="BotonComenzar" type="Button" parent="."]
 margin_left = 432.0
-margin_top = 841.0
-margin_right = 603.0
-margin_bottom = 909.0
+margin_top = 1129.0
+margin_right = 707.0
+margin_bottom = 1233.0
 text = "Start"
 
 [node name="PanelMensaje" type="Panel" parent="."]
-margin_left = 835.0
-margin_top = 632.0
-margin_right = 862.0
-margin_bottom = 658.0
+margin_left = 525.0
+margin_top = 1386.0
+margin_right = 561.0
+margin_bottom = 1412.0
 
 [node name="TextoMensaje" type="Label" parent="PanelMensaje"]
 margin_left = -1.0
-margin_top = 44.0
-margin_right = 59.0
+margin_top = 8.0
+margin_right = 120.0
 margin_bottom = 70.0
 
 [node name="BotonEntrar" type="Button" parent="PanelMensaje"]
 margin_left = 4.0
 margin_top = 92.0
-margin_right = 16.0
-margin_bottom = 112.0
+margin_right = 119.0
+margin_bottom = 150.0
 text = "Entrar"
