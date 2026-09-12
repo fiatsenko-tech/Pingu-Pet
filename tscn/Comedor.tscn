@@ -1,15 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/fondos/Comedor.png" type="Texture" id=1]
 [ext_resource path="res://assets/refri.jpeg" type="Texture" id=2]
 [ext_resource path="res://scripts/Refrigerador.gd" type="Script" id=3]
-[ext_resource path="res://tscn/Area2D.gd" type="Script" id=4]
+[ext_resource path="res://assets/Plato.jpeg" type="Texture" id=4]
+[ext_resource path="res://assets/Comidas/Pez.png" type="Texture" id=5]
+[ext_resource path="res://assets/Comidas/completo.jpeg" type="Texture" id=6]
+[ext_resource path="res://assets/Comidas/Dona.jpeg" type="Texture" id=7]
+[ext_resource path="res://assets/Comidas/pizza.jpeg" type="Texture" id=8]
+[ext_resource path="res://assets/Comidas/Sushi.jpeg" type="Texture" id=9]
+[ext_resource path="res://assets/Comidas/RedVelvet.jpeg" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 148.5, 188 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 213.125, 221.688 )
+extents = Vector2( 217.5, 191.5 )
 
 [node name="Comedor" type="Control"]
 anchor_right = 1.0
@@ -29,22 +32,161 @@ position = Vector2( 658, 986 )
 
 [node name="Refrigerador" type="Node2D" parent="."]
 position = Vector2( 205, 870 )
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Refrigerador"]
 scale = Vector2( 0.519856, 0.68231 )
 texture = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="Refrigerador"]
-script = ExtResource( 3 )
+[node name="ZonaComida" type="Area2D" parent="Refrigerador"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Refrigerador/Area2D"]
-position = Vector2( 0, 3 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Refrigerador/ZonaComida"]
+position = Vector2( -70.5, -0.5 )
 shape = SubResource( 1 )
 
+[node name="PanelRefrigerador" type="Panel" parent="Refrigerador"]
+margin_left = 184.0
+margin_top = -470.0
+margin_right = 599.0
+margin_bottom = -74.0
+
+[node name="EspacioPescado" type="Control" parent="Refrigerador/PanelRefrigerador"]
+margin_left = 44.0
+margin_top = 52.0
+margin_right = 98.0
+margin_bottom = 104.0
+
+[node name="TextureButton" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioPescado"]
+margin_right = 500.0
+margin_bottom = 500.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioPescado"]
+margin_left = 15.0
+margin_top = 48.0
+margin_right = 30.0
+margin_bottom = 62.0
+text = "x5"
+
+[node name="EspacioDona" type="Control" parent="Refrigerador/PanelRefrigerador"]
+margin_left = 153.0
+margin_top = 56.0
+margin_right = 193.0
+margin_bottom = 96.0
+
+[node name="TextureButton2" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioDona"]
+margin_right = 360.0
+margin_bottom = 350.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 7 )
+
+[node name="Label2" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioDona"]
+margin_left = 7.0
+margin_top = 37.0
+margin_right = 28.0
+margin_bottom = 51.0
+text = "x0"
+
+[node name="EspacioPizza" type="Control" parent="Refrigerador/PanelRefrigerador"]
+margin_left = 249.0
+margin_top = 53.0
+margin_right = 289.0
+margin_bottom = 93.0
+
+[node name="TextureButton4" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioPizza"]
+margin_right = 360.0
+margin_bottom = 360.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 8 )
+
+[node name="Label3" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioPizza"]
+margin_left = -1.0
+margin_top = 40.0
+margin_right = 39.0
+margin_bottom = 54.0
+text = "x0"
+
+[node name="EspacioSushi" type="Control" parent="Refrigerador/PanelRefrigerador"]
+margin_left = 44.0
+margin_top = 156.0
+margin_right = 84.0
+margin_bottom = 196.0
+
+[node name="TextureButton6" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioSushi"]
+margin_right = 599.0
+margin_bottom = 511.0
+rect_scale = Vector2( 0.07, 0.07 )
+texture_normal = ExtResource( 9 )
+
+[node name="Label4" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioSushi"]
+margin_left = 5.0
+margin_top = 43.0
+margin_right = 45.0
+margin_bottom = 57.0
+text = "x0"
+
+[node name="EspacioTorta" type="Control" parent="Refrigerador/PanelRefrigerador"]
+margin_left = 152.0
+margin_top = 158.0
+margin_right = 192.0
+margin_bottom = 198.0
+
+[node name="TextureButton5" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioTorta"]
+margin_right = 360.0
+margin_bottom = 360.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 10 )
+
+[node name="Label5" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioTorta"]
+margin_left = -3.0
+margin_top = 38.0
+margin_right = 37.0
+margin_bottom = 52.0
+text = "x0"
+
+[node name="EspacioCompleto" type="Control" parent="Refrigerador/PanelRefrigerador"]
+margin_left = 248.0
+margin_top = 150.0
+margin_right = 288.0
+margin_bottom = 190.0
+
+[node name="TextureButton3" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioCompleto"]
+margin_right = 554.0
+margin_bottom = 554.0
+rect_scale = Vector2( 0.07, 0.07 )
+texture_normal = ExtResource( 6 )
+
+[node name="Label6" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioCompleto"]
+margin_left = 1.0
+margin_top = 41.0
+margin_right = 41.0
+margin_bottom = 55.0
+text = "x0"
+
+[node name="BotonCerrar" type="Button" parent="Refrigerador/PanelRefrigerador"]
+margin_left = 353.0
+margin_right = 373.0
+margin_bottom = 20.0
+rect_scale = Vector2( 3, 3 )
+text = "X"
+
 [node name="Plato" type="Node2D" parent="."]
-position = Vector2( 909, 566 )
+position = Vector2( 569, 1114 )
 
 [node name="Sprite" type="Sprite" parent="Plato"]
+position = Vector2( 0, 57 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="TextureButton" type="TextureButton" parent="Plato"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="Plato"]
+margin_top = 57.0
+margin_right = 40.0
+margin_bottom = 71.0
 
 [node name="Mesa" type="Node2D" parent="."]
 position = Vector2( 904, 851 )
@@ -55,13 +197,3 @@ position = Vector2( 904, 851 )
 position = Vector2( 856, 1028 )
 
 [node name="Sprite" type="Sprite" parent="Silla"]
-
-[node name="RefrigeradorPrueba" type="Node2D" parent="."]
-position = Vector2( 486, 340 )
-
-[node name="Area2D" type="Area2D" parent="RefrigeradorPrueba"]
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RefrigeradorPrueba/Area2D"]
-position = Vector2( -302.125, 532.688 )
-shape = SubResource( 2 )
