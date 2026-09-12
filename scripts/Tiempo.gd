@@ -87,6 +87,9 @@ func guardar_estado():
 		"energia": Necesidades.energia,
 		"diversion": Necesidades.diversion
 	}
+	datos ["food"] = {
+		"pescado": Inventario.food["pescado"]
+	}
 
 	var archivo = File.new()
 	var error = archivo.open(RUTA_GUARDADO, File.WRITE)

@@ -28,8 +28,7 @@ func _ready():
 	boton_diversion.connect("pressed", self, "_on_BotonDiversion_pressed")
 	
 	cargar_habitacion()
-
-	pingu.quedarse_en_centro()
+	pingu.position = pingu.posicion_destino
 
 	print("Hambre: ", Necesidades.hambre)
 	print("Higiene: ", Necesidades.higiene)
@@ -45,6 +44,9 @@ func cargar_habitacion():
 	var habitacion = escena.instance()
 
 	contenedor.add_child(habitacion)
+
+	var posicion_pingu = habitacion.get_node("PosicionPingu")
+	pingu.posicion_destino = posicion_pingu.global_position
 
 	boton_izquierdo.raise()
 	boton_derecho.raise()

@@ -14,3 +14,6 @@ stretch_mode = 7
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="PosicionPingu" type="Position2D" parent="."]
+position = Vector2( 786, 641 )

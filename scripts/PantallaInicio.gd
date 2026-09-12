@@ -48,6 +48,9 @@ func _on_BotonComenzar_pressed():
 			"higiene": 100,
 			"energia": 100,
 			"diversion": 100
+		},
+		"food": {
+			"pescado":5
 		}
 	}
 

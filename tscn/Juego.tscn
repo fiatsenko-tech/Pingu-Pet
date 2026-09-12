@@ -17,6 +17,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Pingu" parent="." instance=ExtResource( 2 )]
+position = Vector2( -45, 201 )
 
 [node name="UI" type="Control" parent="."]
 margin_left = 139.0

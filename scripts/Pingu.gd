@@ -1,7 +1,7 @@
 extends Node2D
 
 var velocidad = 100
-var posicion_centro = 576
+var posicion_destino = Vector2.ZERO
 
 var moviendose = false
 var direccion = 0
@@ -11,12 +11,12 @@ func _process(delta):
 	if moviendose:
 		position.x += velocidad * direccion * delta
 
-		if direccion == 1 and position.x >= posicion_centro:
-			position.x = posicion_centro
+		if direccion == 1 and position.x >= posicion_destino.x:
+			position.x = posicion_destino.x
 			moviendose = false
 
-		elif direccion == -1 and position.x <= posicion_centro:
-			position.x = posicion_centro
+		elif direccion == -1 and position.x <= posicion_destino.x:
+			position.x = posicion_destino.x
 			moviendose = false
 
 
@@ -32,6 +32,7 @@ func entrar_desde_derecha():
 	direccion = -1
 
 
-func quedarse_en_centro():
-	position.x = posicion_centro
+func quedarse_en_destino():
+	position = posicion_destino
 	moviendose = false
+

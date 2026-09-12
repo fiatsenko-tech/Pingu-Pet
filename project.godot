@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 
 Necesidades="*res://scripts/Necesidades.gd"
 Tiempo="*res://scripts/Tiempo.gd"
+Inventario="*res://scripts/Inventario.gd"
 
 [display]
 
