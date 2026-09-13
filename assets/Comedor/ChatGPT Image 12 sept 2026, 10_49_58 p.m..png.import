@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pez.png-83008812e780b95b02556e5f5ef21677.stex"
+path="res://.import/ChatGPT Image 12 sept 2026, 10_49_58 p.m..png-ae363df86aa81d00e0534cda141656b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Comidas/Pez.png"
-dest_files=[ "res://.import/Pez.png-83008812e780b95b02556e5f5ef21677.stex" ]
+source_file="res://assets/Comedor/ChatGPT Image 12 sept 2026, 10_49_58 p.m..png"
+dest_files=[ "res://.import/ChatGPT Image 12 sept 2026, 10_49_58 p.m..png-ae363df86aa81d00e0534cda141656b8.stex" ]
 
 [params]
 

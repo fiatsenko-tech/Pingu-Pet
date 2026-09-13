@@ -3,7 +3,8 @@ extends Node
 const RUTA_GUARDADO = "user://save_data.json"
 
 var food = {
-	"pescado": 5
+	"pescado": 5,
+	"dona": 5
 }
 
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Plato.jpeg-1dc1adadb2edc4e5c75905ac92f6607c.stex"
+path="res://.import/ChatGPT Image 12 sept 2026, 10_59_41 p.m..png-117f24f48e24a47f1e4c12fbeaa8e951.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Plato.jpeg"
-dest_files=[ "res://.import/Plato.jpeg-1dc1adadb2edc4e5c75905ac92f6607c.stex" ]
+source_file="res://assets/Comidas/ChatGPT Image 12 sept 2026, 10_59_41 p.m..png"
+dest_files=[ "res://.import/ChatGPT Image 12 sept 2026, 10_59_41 p.m..png-117f24f48e24a47f1e4c12fbeaa8e951.stex" ]
 
 [params]
 
