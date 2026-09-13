@@ -179,14 +179,17 @@ position = Vector2( 0, 57 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 4 )
 
-[node name="TextureButton" type="TextureButton" parent="Plato"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="TextureButtonAlimento" type="TextureButton" parent="Plato"]
+margin_left = -17.0
+margin_top = 19.0
+margin_right = 23.0
+margin_bottom = 59.0
 
 [node name="Label" type="Label" parent="Plato"]
-margin_top = 57.0
-margin_right = 40.0
-margin_bottom = 71.0
+margin_left = -33.0
+margin_top = 115.0
+margin_right = 35.0
+margin_bottom = 134.0
 
 [node name="Mesa" type="Node2D" parent="."]
 position = Vector2( 904, 851 )
