@@ -4,6 +4,9 @@ var alimentos_en_plato = {}
 var alimento_actual = ""
 var indice_actual = 0
 
+var arrastrando = false
+var offset_arrastre = Vector2()
+
 var texturas_alimentos = {
 	"pescado": preload("res://assets/Comidas/ChatGPT Image 12 sept 2026, 10_59_41 p.m..png"),
 	"completo": preload("res://assets/Comidas/completo.jpeg"),
@@ -28,6 +31,8 @@ func _ready():
 	boton_derecho.connect("pressed", self, "_on_BotonDerecha_pressed")
 	boton_izquierdo.connect("pressed", self, "_on_BotonIzquierda_pressed")
 	
+	imagen_alimento.connect("gui_input", self, "_on_ImagenAlimento_gui_input")
+
 func agregar_alimento(nombre_alimento):
 	if not texturas_alimentos.has(nombre_alimento):
 		print("ERROR: No existe la textura de: ", nombre_alimento)
@@ -108,3 +113,20 @@ func _on_BotonDerecha_pressed():
 	alimento_actual = alimentos[indice_actual]
 	
 	actualizar_visual()
+
+func _on_ImagenAlimento_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT:
+			if event.pressed:
+				arrastrando = true
+				
+				offset_arrastre = imagen_alimento.rect_global_position - event.global_position
+				
+				print("arrastrando: ", alimento_actual)
+			else: 
+				arrastrando = false
+				print("comida soltada")
+
+func _process(delta):
+	if arrastrando:
+		imagen_alimento.rect_global_position = get_global_mouse_position() + offset_arrastre

@@ -6,6 +6,18 @@ var posicion_destino = Vector2.ZERO
 var moviendose = false
 var direccion = 0
 
+onready var area_comida = $AreaComida
+
+func _ready():
+	area_comida.connect("area_entered", self, "_on_area_comida_entered")
+	area_comida.connect("area_exited", self, "_on_area_comida_exited")
+
+func _on_area_comida_entered(area):
+	print("Comida entro en pingu")
+
+func _on_area_comida_exited(area):
+	print("comida salio de pingu")
+
 
 func _process(delta):
 	if moviendose:
