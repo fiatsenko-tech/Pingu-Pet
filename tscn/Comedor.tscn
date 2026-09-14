@@ -189,7 +189,6 @@ margin_top = -43.0
 margin_right = 1462.0
 margin_bottom = 981.0
 rect_scale = Vector2( 0.1, 0.1 )
-texture_normal = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="Plato"]
 margin_left = -42.0

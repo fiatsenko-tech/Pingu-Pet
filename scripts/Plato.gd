@@ -78,7 +78,7 @@ func actualizar_botones():
 		boton_derecho.hide()
 
 
-func _on_BotonIzquierdo_pressed():
+func _on_BotonIzquierda_pressed():
 	if alimentos_en_plato.size() <= 1:
 		return
 	
@@ -94,7 +94,7 @@ func _on_BotonIzquierdo_pressed():
 	actualizar_visual()
 
 
-func _on_BotonDerecho_pressed():
+func _on_BotonDerecha_pressed():
 	if alimentos_en_plato.size() <= 1:
 		return
 	
