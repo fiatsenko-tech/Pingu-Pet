@@ -48,6 +48,10 @@ func cargar_habitacion():
 	var posicion_pingu = habitacion.get_node("PosicionPingu")
 	pingu.posicion_destino = posicion_pingu.global_position
 
+	if habitacion.has_node("Plato"):
+		var plato = habitacion.get_node("Plato")
+		plato.configurar_pingu(pingu)
+
 	boton_izquierdo.raise()
 	boton_derecho.raise()
 
