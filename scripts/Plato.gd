@@ -126,6 +126,8 @@ func _on_BotonDerecha_pressed():
 	
 	actualizar_visual()
 
+#andjkashfjawh me volveré locooo lolxdlmao
+
 func _on_ImagenAlimento_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
@@ -141,6 +143,15 @@ func _on_ImagenAlimento_gui_input(event):
 				print("POSICION PINGU CANVAS: ", pingu.get_global_transform_with_canvas().origin)
 				print("POSICION AREA: ", collision_area_pingu.global_position)
 				
+				print("===== COORDENADAS COMIDA =====")
+				print("Mouse event.global_position: ", event.global_position)
+				print("Mouse get_global_mouse_position(): ", get_global_mouse_position())
+				print("Imagen rect_position: ", imagen_alimento.rect_position)
+				print("Imagen rect_global_position: ", imagen_alimento.rect_global_position)
+				print("Imagen rect_size: ", imagen_alimento.rect_size)
+				print("Imagen global_rect: ", imagen_alimento.get_global_rect())
+				print("==============================")
+				
 			else:
 				arrastrando = false
 	
@@ -153,9 +164,12 @@ func _on_ImagenAlimento_gui_input(event):
 	
 				imagen_alimento.rect_global_position = posicion_original
 
+# warning-ignore:unused_argument
 func _process(delta):
 	if arrastrando:
 		imagen_alimento.rect_global_position = get_global_mouse_position() + offset_arrastre
+		print("MOUSE EN PROCESS: ", get_global_mouse_position())
+		print("COMIDA RECT GLOBAL: ", imagen_alimento.rect_global_position)
 
 func comida_dentro_de_pingu():
 	if collision_area_pingu == null:

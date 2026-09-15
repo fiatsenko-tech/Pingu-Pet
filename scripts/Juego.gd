@@ -29,6 +29,12 @@ func _ready():
 	
 	cargar_habitacion()
 	pingu.position = pingu.posicion_destino
+	
+	print("----- COMPROBACION PINGU -----")
+	print("Destino guardado: ", pingu.posicion_destino)
+	print("Pingu position: ", pingu.position)
+	print("Pingu global_position: ", pingu.global_position)
+	print("------------------------------")
 
 	print("Hambre: ", Necesidades.hambre)
 	print("Higiene: ", Necesidades.higiene)
@@ -46,7 +52,13 @@ func cargar_habitacion():
 	contenedor.add_child(habitacion)
 
 	var posicion_pingu = habitacion.get_node("PosicionPingu")
+	
+	print("POSICION LOCAL POSICIONPINGU: ", posicion_pingu.position)
+	print("POSICION GLOBAL POSICIONPINGU: ", posicion_pingu.global_position)
+	
 	pingu.posicion_destino = posicion_pingu.global_position
+	
+	print("POSICION DESTINO PINGU: ", pingu.posicion_destino)
 
 	if habitacion.has_node("Plato"):
 		var plato = habitacion.get_node("Plato")
