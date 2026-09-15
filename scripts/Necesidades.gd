@@ -2,31 +2,25 @@ extends Node
 
 const RUTA_GUARDADO = "user://save_data.json"
 
-var hambre = 100
+var hambre = 50
 var higiene = 100
 var energia = 100
 var diversion = 100
 
-
 func _ready():
 	cargar_necesidades()
-
 
 func modificar_hambre(cantidad):
 	hambre = clamp(hambre + cantidad, 0, 100)
 
-
 func modificar_higiene(cantidad):
 	higiene = clamp(higiene + cantidad, 0, 100)
-
 
 func modificar_energia(cantidad):
 	energia = clamp(energia + cantidad, 0, 100)
 
-
 func modificar_diversion(cantidad):
 	diversion = clamp(diversion + cantidad, 0, 100)
-
 
 func pasar_tiempo(segundos):
 	var perdida = int(segundos / 60)
@@ -35,7 +29,6 @@ func pasar_tiempo(segundos):
 		modificar_hambre(-perdida)
 		modificar_higiene(-perdida)
 		modificar_diversion(-perdida)
-
 
 func cargar_necesidades():
 	var archivo = File.new()

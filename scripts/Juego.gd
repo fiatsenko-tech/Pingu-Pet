@@ -28,7 +28,7 @@ func _ready():
 	boton_diversion.connect("pressed", self, "_on_BotonDiversion_pressed")
 	
 	cargar_habitacion()
-	pingu.position = pingu.posicion_destino
+	pingu.global_position = pingu.posicion_destino
 	
 	print("----- COMPROBACION PINGU -----")
 	print("Destino guardado: ", pingu.posicion_destino)
