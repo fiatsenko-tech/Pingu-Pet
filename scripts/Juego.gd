@@ -1,6 +1,9 @@
 extends Control
 
 var habitacion_actual = 2
+var habitacion_actual_nodo = null
+var pingu_llego_al_destino = false
+var pingu_en_cama = false
 
 var habitaciones = [
 	"res://tscn/Comedor.tscn",
@@ -26,6 +29,7 @@ func _ready():
 	boton_dormir.connect("pressed", self, "_on_BotonDormir_pressed")
 	boton_higiene.connect("pressed", self, "_on_BotonHigiene_pressed")
 	boton_diversion.connect("pressed", self, "_on_BotonDiversion_pressed")
+	pingu.connect("llego_al_destino", self, "_on_Pingu_llego_al_destino")
 	
 	cargar_habitacion()
 	pingu.global_position = pingu.posicion_destino
@@ -50,13 +54,15 @@ func cargar_habitacion():
 	var habitacion = escena.instance()
 
 	contenedor.add_child(habitacion)
-
+	habitacion_actual_nodo = habitacion
+	
 	var posicion_pingu = habitacion.get_node("PosicionPingu")
 	
 	print("POSICION LOCAL POSICIONPINGU: ", posicion_pingu.position)
 	print("POSICION GLOBAL POSICIONPINGU: ", posicion_pingu.global_position)
 	
 	pingu.posicion_destino = posicion_pingu.global_position
+	pingu_llego_al_destino = false
 	
 	print("POSICION DESTINO PINGU: ", pingu.posicion_destino)
 
@@ -100,3 +106,7 @@ func _on_BotonDiversion_pressed():
 	Necesidades.modificar_diversion(20)
 
 	print("Diversion luego de divertirse: ", Necesidades.diversion)
+
+func _on_Pingu_llego_al_destino():
+	if habitacion_actual == 2:
+		habitacion_actual_nodo.pingu_llego_a_la_cama()

@@ -7,6 +7,8 @@ var moviendose = false
 var direccion = 0
 var mensaje_tiempo = 0.0
 
+signal llego_al_destino
+
 onready var area_comida = $AreaComida
 onready var mensaje = $Mensaje
 
@@ -30,10 +32,12 @@ func _process(delta):
 		if direccion == 1 and global_position.x >= posicion_destino.x:
 			global_position.x = posicion_destino.x
 			moviendose = false
+			emit_signal("llego_al_destino")
 
 		elif direccion == -1 and global_position.x <= posicion_destino.x:
 			global_position.x = posicion_destino.x
 			moviendose = false
+			emit_signal("llego_al_destino")
 	
 	if mensaje_tiempo > 0:
 		mensaje_tiempo -= delta

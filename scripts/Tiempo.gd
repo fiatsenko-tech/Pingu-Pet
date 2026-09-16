@@ -6,17 +6,13 @@ var tiempo_anterior = 0
 var segundos_acumulados = 0
 var segundos_desde_guardado = 0
 
-
 func _ready():
 	tiempo_anterior = OS.get_unix_time()
-
 	aplicar_tiempo_offline()
-
 
 func _process(delta):
 	actualizar()
 
-	# Guardamos periódicamente para no perder cambios
 	segundos_desde_guardado += delta
 
 	if segundos_desde_guardado >= 10:
@@ -30,18 +26,12 @@ func actualizar():
 
 	if segundos_pasados > 0:
 		segundos_acumulados += segundos_pasados
-
+		
 		if segundos_acumulados >= 60:
 			var minutos = int(segundos_acumulados / 60)
-
 			Necesidades.pasar_tiempo(minutos * 60)
-
 			segundos_acumulados = segundos_acumulados % 60
-
 		tiempo_anterior = tiempo_actual
-
-		
-
 
 func aplicar_tiempo_offline():
 	var datos = cargar_datos()
@@ -54,7 +44,6 @@ func aplicar_tiempo_offline():
 
 	var tiempo_actual = OS.get_unix_time()
 	var ultimo_tiempo = int(datos["last_time"])
-
 	var segundos_pasados = tiempo_actual - ultimo_tiempo
 
 	if segundos_pasados <= 0:
@@ -71,7 +60,6 @@ func aplicar_tiempo_offline():
 	print("Diversión: ", Necesidades.diversion)
 
 	guardar_estado()
-
 
 func guardar_estado():
 	var datos = cargar_datos()
@@ -124,7 +112,6 @@ func cargar_datos():
 		return {}
 
 	return datos
-
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:

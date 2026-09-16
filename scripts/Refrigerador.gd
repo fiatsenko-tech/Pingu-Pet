@@ -9,11 +9,8 @@ onready var boton_pescado = $PanelRefrigerador/EspacioPescado/TextureButton
 onready var label_pescado = $PanelRefrigerador/EspacioPescado/Label
 onready var boton_dona = $PanelRefrigerador/EspacioDona/TextureButton2
 onready var label_dona = $PanelRefrigerador/EspacioDona/Label2
-
 onready var boton_cerrar = $PanelRefrigerador/BotonCerrar
-
 onready var plato = get_node("../Plato")
-
 
 func _ready():
 	zona_comida.connect("input_event", self, "_on_ZonaComida_input_event")
@@ -23,12 +20,10 @@ func _ready():
 	
 	panel.hide()
 
-
 func _on_ZonaComida_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			abrir()
-
 
 func abrir():
 	if abierto:
@@ -37,16 +32,10 @@ func abrir():
 	abierto = true
 	panel.show()
 	actualizar_inventario()
-	
-	print("Refrigerador abierto")
-
 
 func cerrar():
 	abierto = false
 	panel.hide()
-	
-	print("Refrigerador cerrado")
-
 
 func actualizar_inventario():
 	var cantidad_pescado = Inventario.food["pescado"]
@@ -65,9 +54,6 @@ func _on_BotonPescado_pressed():
 	plato.agregar_alimento("pescado")
 
 	actualizar_inventario()
-	
-	print("Pescado retirado.")
-	print("Quedan en refrigerador: ", Inventario.food["pescado"])
 
 func _on_BotonDona_pressed():
 	if Inventario.food["dona"] <= 0:
@@ -77,9 +63,6 @@ func _on_BotonDona_pressed():
 	plato.agregar_alimento("dona")
 	
 	actualizar_inventario()
-	
-	print("Dona retirada.")
-	print("Quedan en refrigerador: ", Inventario.food["dona"])
 
 func _on_BotonCerrar_pressed():
 	cerrar()
