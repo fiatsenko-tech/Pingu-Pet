@@ -33,12 +33,6 @@ func _ready():
 	
 	cargar_habitacion()
 	pingu.global_position = pingu.posicion_destino
-	
-	print("----- COMPROBACION PINGU -----")
-	print("Destino guardado: ", pingu.posicion_destino)
-	print("Pingu position: ", pingu.position)
-	print("Pingu global_position: ", pingu.global_position)
-	print("------------------------------")
 
 	print("Hambre: ", Necesidades.hambre)
 	print("Higiene: ", Necesidades.higiene)

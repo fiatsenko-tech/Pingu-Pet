@@ -73,7 +73,8 @@ func guardar_estado():
 		"hambre": Necesidades.hambre,
 		"higiene": Necesidades.higiene,
 		"energia": Necesidades.energia,
-		"diversion": Necesidades.diversion
+		"diversion": Necesidades.diversion,
+		"pingu_durmiendo": Necesidades.pingu_durmiendo
 	}
 	datos ["food"] = {
 		"pescado": Inventario.food["pescado"]

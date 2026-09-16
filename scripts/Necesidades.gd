@@ -2,9 +2,11 @@ extends Node
 
 const RUTA_GUARDADO = "user://save_data.json"
 
+signal energia_cambiada
+
 var hambre = 50
 var higiene = 100
-var energia = 50
+var energia = 98
 var diversion = 100
 
 var pingu_durmiendo = false
@@ -34,7 +36,12 @@ func pasar_tiempo(segundos):
 		
 		if pingu_durmiendo:
 			modificar_energia(minutos)
-			print("Energía después de dormir: ", energia)
+			
+			if energia >= 100:
+				pingu_durmiendo = false
+				
+			emit_signal("energia_cambiada")
+			print("Energia despues de dormir: ", energia)
 
 func cargar_necesidades():
 	var archivo = File.new()
@@ -71,3 +78,6 @@ func cargar_necesidades():
 
 	if necesidades.has("diversion"):
 		diversion = int(necesidades["diversion"])
+	
+	if necesidades.has("pingu_durmiendo"):
+		pingu_durmiendo = bool(necesidades["pingu_durmiendo"])

@@ -7,6 +7,10 @@ onready var lampara = $Lampara
 
 func _ready():
 	lampara.connect("estado_cambiado", self, "_on_Lampara_estado_cambiado")
+	Necesidades.connect("energia_cambiada", self, "_on_energia_cambiada")
+
+func _on_energia_cambiada():
+	actualizar_estado_sueno()
 
 func pingu_llego_a_la_cama():
 	pingu_acostado = true
@@ -27,3 +31,6 @@ func actualizar_estado_sueno():
 
 func _on_Lampara_estado_cambiado():
 	actualizar_estado_sueno()
+
+func _exit_tree():
+	Necesidades.pingu_durmiendo = false
