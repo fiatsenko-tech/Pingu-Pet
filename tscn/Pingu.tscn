@@ -7,7 +7,7 @@
 extents = Vector2( 117.75, 134.75 )
 
 [node name="Pingu" type="Node2D"]
-position = Vector2( -76, 832 )
+position = Vector2( 374, 794 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -18,3 +18,10 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaComida"]
 shape = SubResource( 1 )
+
+[node name="Mensaje" type="Label" parent="."]
+margin_left = -132.0
+margin_top = -243.0
+margin_right = 60.0
+margin_bottom = -187.0
+rect_scale = Vector2( 1.4, 1.4 )

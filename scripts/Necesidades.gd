@@ -4,8 +4,10 @@ const RUTA_GUARDADO = "user://save_data.json"
 
 var hambre = 50
 var higiene = 100
-var energia = 100
+var energia = 50
 var diversion = 100
+
+var pingu_durmiendo = false
 
 func _ready():
 	cargar_necesidades()
@@ -23,12 +25,16 @@ func modificar_diversion(cantidad):
 	diversion = clamp(diversion + cantidad, 0, 100)
 
 func pasar_tiempo(segundos):
-	var perdida = int(segundos / 60)
+	var minutos = int(segundos / 60)
 
-	if perdida > 0:
-		modificar_hambre(-perdida)
-		modificar_higiene(-perdida)
-		modificar_diversion(-perdida)
+	if minutos > 0:
+		modificar_hambre(-minutos)
+		modificar_higiene(-minutos)
+		modificar_diversion(-minutos)
+		
+		if pingu_durmiendo:
+			modificar_energia(minutos)
+			print("Energía después de dormir: ", energia)
 
 func cargar_necesidades():
 	var archivo = File.new()

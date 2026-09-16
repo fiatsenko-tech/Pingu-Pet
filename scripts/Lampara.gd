@@ -1,5 +1,7 @@
 extends Node2D
 
+signal estado_cambiado
+
 var encendida = true
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
@@ -8,3 +10,4 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 			encendida = !encendida
 			
 			print ("Lampara encendida: ", encendida)
+			emit_signal("estado_cambiado")

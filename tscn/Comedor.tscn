@@ -60,7 +60,7 @@ margin_bottom = 104.0
 [node name="TextureButton" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioPescado"]
 margin_left = -9.0
 margin_top = 1.0
-margin_right = 1527.0
+margin_right = 1531.0
 margin_bottom = 1025.0
 rect_scale = Vector2( 0.05, 0.05 )
 texture_normal = ExtResource( 5 )
@@ -184,17 +184,17 @@ scale = Vector2( 0.135807, 0.135156 )
 texture = ExtResource( 2 )
 
 [node name="TextureButtonAlimento" type="TextureButton" parent="Plato"]
-margin_left = -74.0
-margin_top = -43.0
-margin_right = 1462.0
-margin_bottom = 981.0
+margin_left = -73.0
+margin_top = -41.0
+margin_right = 137.0
+margin_bottom = 99.0
 rect_scale = Vector2( 0.1, 0.1 )
 
 [node name="Label" type="Label" parent="Plato"]
 margin_left = -42.0
 margin_top = 79.0
-margin_right = 55.0
-margin_bottom = 107.0
+margin_right = -3.0
+margin_bottom = 98.0
 rect_scale = Vector2( 4, 4 )
 
 [node name="BotonIzquierda" type="Button" parent="Plato"]
