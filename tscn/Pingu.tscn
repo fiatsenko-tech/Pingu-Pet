@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Pingu.gd" type="Script" id=1]
 [ext_resource path="res://assets/Pingu.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 117.75, 134.75 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 180, 224.5 )
 
 [node name="Pingu" type="Node2D"]
 position = Vector2( 374, 794 )
@@ -25,3 +28,11 @@ margin_top = -304.0
 margin_right = 62.0
 margin_bottom = -248.0
 rect_scale = Vector2( 1.4, 1.4 )
+
+[node name="AreaBano" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBano"]
+position = Vector2( -1, 1.5 )
+shape = SubResource( 2 )

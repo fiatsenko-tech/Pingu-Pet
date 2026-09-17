@@ -5,7 +5,7 @@ const RUTA_GUARDADO = "user://save_data.json"
 signal energia_cambiada
 
 var hambre = 50
-var higiene = 100
+var higiene = 51
 var energia = 98
 var diversion = 100
 

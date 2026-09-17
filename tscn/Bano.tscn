@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/fondos/Bano.png" type="Texture" id=1]
 [ext_resource path="res://assets/Baño/Jabon.jpeg" type="Texture" id=2]
+[ext_resource path="res://assets/Baño/Ducha.jpeg" type="Texture" id=3]
+[ext_resource path="res://scripts/Jabon.gd" type="Script" id=4]
+[ext_resource path="res://tscn/Bano.gd" type="Script" id=5]
+[ext_resource path="res://scripts/Ducha.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 81, 64.5 )
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 165, 143.5 )
+
 [node name="Bano" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 5 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -20,19 +28,36 @@ __meta__ = {
 }
 
 [node name="PosicionPingu" type="Position2D" parent="."]
-position = Vector2( 523, 868 )
+position = Vector2( 413, 557 )
 
 [node name="Jabon" type="Node2D" parent="."]
-position = Vector2( 234, 1034 )
+position = Vector2( 234, 1400 )
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Jabon"]
 scale = Vector2( 0.291967, 0.23195 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="Jabon"]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jabon/Area2D"]
 position = Vector2( 0, 0.5 )
 shape = SubResource( 1 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Ducha" type="Node2D" parent="."]
+position = Vector2( 798, 500 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Ducha"]
+scale = Vector2( 0.608303, 0.518051 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Ducha"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ducha/Area2D"]
+position = Vector2( 5, -6 )
+shape = SubResource( 2 )
