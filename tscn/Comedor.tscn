@@ -70,7 +70,7 @@ margin_left = 15.0
 margin_top = 53.0
 margin_right = 30.0
 margin_bottom = 67.0
-text = "x5"
+text = "x0"
 
 [node name="EspacioDona" type="Control" parent="Refrigerador/PanelRefrigerador"]
 margin_left = 153.0
@@ -175,7 +175,7 @@ rect_scale = Vector2( 3, 3 )
 text = "X"
 
 [node name="Plato" type="Node2D" parent="."]
-position = Vector2( 569, 1114 )
+position = Vector2( 572, 1290 )
 script = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="Plato"]
@@ -184,10 +184,10 @@ scale = Vector2( 0.135807, 0.135156 )
 texture = ExtResource( 2 )
 
 [node name="TextureButtonAlimento" type="TextureButton" parent="Plato"]
-margin_left = -73.0
-margin_top = -41.0
-margin_right = 137.0
-margin_bottom = 99.0
+margin_left = -94.0
+margin_top = -98.0
+margin_right = 116.0
+margin_bottom = 42.0
 rect_scale = Vector2( 0.1, 0.1 )
 
 [node name="Label" type="Label" parent="Plato"]

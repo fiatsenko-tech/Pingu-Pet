@@ -183,34 +183,26 @@ func comida_dentro_de_pingu():
 
 
 func comer_alimento():
-	# Si Pingu ya está lleno, no consume la comida.
 	if Necesidades.hambre >= 100:
 		print("Pingu está lleno")
 		pingu.mostrar_mensaje("Estoy lleno u.u")
 		return
 
-	# Pingu puede comer.
 	alimentos_en_plato[alimento_actual] -= 1
 
-	# Aumentamos el hambre en 17 puntos.
 	Necesidades.modificar_hambre(17)
 
 	print("Pingu comió ", alimento_actual)
 	print("Hambre actual: ", Necesidades.hambre)
 
-	# Si ya no quedan unidades de este alimento,
-	# eliminamos ese alimento del plato.
 	if alimentos_en_plato[alimento_actual] <= 0:
 		alimentos_en_plato.erase(alimento_actual)
 
-		# Si todavía quedan otros alimentos,
-		# seleccionamos el primero.
 		if alimentos_en_plato.size() > 0:
 			var alimentos = alimentos_en_plato.keys()
 			indice_actual = 0
 			alimento_actual = alimentos[0]
 		else:
-			# Ya no queda ninguna comida.
 			alimento_actual = ""
 			indice_actual = 0
 
