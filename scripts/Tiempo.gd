@@ -8,7 +8,23 @@ var segundos_desde_guardado = 0
 
 func _ready():
 	tiempo_anterior = OS.get_unix_time()
+	cargar_dinero()
 	aplicar_tiempo_offline()
+
+func cargar_dinero():
+	var datos = cargar_datos()
+	
+	if datos.empty():
+		return
+	
+	if not datos.has("economia"):
+		return
+	
+	var economia = datos["economia"]
+	
+	if economia.has("monedas"):
+		Dinero.monedas = int(economia["monedas"])
+		print("Monedas cargadas: ", Dinero.monedas)
 
 func _process(delta):
 	actualizar()
@@ -78,6 +94,9 @@ func guardar_estado():
 	}
 	datos ["food"] = {
 		"pescado": Inventario.food["pescado"]
+	}
+	datos ["economia"] = {
+		"monedas": Dinero.monedas
 	}
 
 	var archivo = File.new()

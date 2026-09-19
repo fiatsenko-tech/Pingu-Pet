@@ -20,6 +20,7 @@ onready var boton_comida = $UI/BotonComida
 onready var boton_dormir = $UI/BotonDormir
 onready var boton_higiene = $UI/BotonHigiene
 onready var boton_diversion = $UI/BotonDiversion
+onready var label_monedas = $UI/LabelMonedas
 
 
 func _ready():
@@ -30,7 +31,9 @@ func _ready():
 	boton_higiene.connect("pressed", self, "_on_BotonHigiene_pressed")
 	boton_diversion.connect("pressed", self, "_on_BotonDiversion_pressed")
 	pingu.connect("llego_al_destino", self, "_on_Pingu_llego_al_destino")
+	label_monedas.text = str(Dinero.monedas)
 	
+	actualizar_monedas()
 	cargar_habitacion()
 	pingu.global_position = pingu.posicion_destino
 
@@ -38,8 +41,10 @@ func _ready():
 	print("Higiene: ", Necesidades.higiene)
 	print("Energía: ", Necesidades.energia)
 	print("Diversión: ", Necesidades.diversion)
-
-
+	
+	print("monedas iniciales: ", Dinero.monedas)
+	Dinero.restar_monedas(20)
+	
 func cargar_habitacion():
 	for hijo in contenedor.get_children():
 		hijo.queue_free()
@@ -104,3 +109,6 @@ func _on_BotonDiversion_pressed():
 func _on_Pingu_llego_al_destino():
 	if habitacion_actual == 2:
 		habitacion_actual_nodo.pingu_llego_a_la_cama()
+
+func actualizar_monedas():
+	label_monedas.text = str(Dinero.monedas)
