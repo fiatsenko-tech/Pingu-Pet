@@ -16,24 +16,19 @@ onready var contenedor = $HabitacionActual
 onready var pingu = $Pingu
 onready var boton_izquierdo = $UI/BotonIzquierdo
 onready var boton_derecho = $UI/BotonDerecho
-onready var boton_comida = $UI/BotonComida
-onready var boton_dormir = $UI/BotonDormir
-onready var boton_higiene = $UI/BotonHigiene
-onready var boton_diversion = $UI/BotonDiversion
 onready var label_monedas = $UI/LabelMonedas
-
+onready var boton_tienda = $UI/BotonTienda
 
 func _ready():
 	boton_izquierdo.connect("pressed", self, "_on_BotonIzquierdo_pressed")
 	boton_derecho.connect("pressed", self, "_on_BotonDerecho_pressed")
-	boton_comida.connect("pressed", self, "_on_BotonComida_pressed")
-	boton_dormir.connect("pressed", self, "_on_BotonDormir_pressed")
-	boton_higiene.connect("pressed", self, "_on_BotonHigiene_pressed")
-	boton_diversion.connect("pressed", self, "_on_BotonDiversion_pressed")
+	boton_tienda.connect("pressed", self, "_on_BotonTienda_pressed")
 	pingu.connect("llego_al_destino", self, "_on_Pingu_llego_al_destino")
 	label_monedas.text = str(Dinero.monedas)
 	
 	actualizar_monedas()
+	Dinero.connect("monedas_cambiaron", self, "_on_monedas_cambiaron")
+	
 	cargar_habitacion()
 	pingu.global_position = pingu.posicion_destino
 
@@ -41,10 +36,11 @@ func _ready():
 	print("Higiene: ", Necesidades.higiene)
 	print("Energía: ", Necesidades.energia)
 	print("Diversión: ", Necesidades.diversion)
-	
 	print("monedas iniciales: ", Dinero.monedas)
-	Dinero.restar_monedas(20)
-	
+
+func _on_monedas_cambiaron():
+	actualizar_monedas()
+
 func cargar_habitacion():
 	for hijo in contenedor.get_children():
 		hijo.queue_free()
@@ -57,13 +53,8 @@ func cargar_habitacion():
 	
 	var posicion_pingu = habitacion.get_node("PosicionPingu")
 	
-	print("POSICION LOCAL POSICIONPINGU: ", posicion_pingu.position)
-	print("POSICION GLOBAL POSICIONPINGU: ", posicion_pingu.global_position)
-	
 	pingu.posicion_destino = posicion_pingu.global_position
 	pingu_llego_al_destino = false
-	
-	print("POSICION DESTINO PINGU: ", pingu.posicion_destino)
 
 	if habitacion.has_node("Plato"):
 		var plato = habitacion.get_node("Plato")
@@ -86,29 +77,14 @@ func _on_BotonDerecho_pressed():
 		cargar_habitacion()
 		pingu.entrar_desde_izquierda()
 
-func _on_BotonComida_pressed():
-	Necesidades.modificar_hambre(20)
-
-	print("Hambre después de comer: ", Necesidades.hambre)
-
-func _on_BotonDormir_pressed():
-	Necesidades.modificar_energia(20)
-
-	print("Energía despues de dormir: ", Necesidades.energia)
-
-func _on_BotonHigiene_pressed():
-	Necesidades.modificar_higiene(20)
-
-	print("Limpieza luego del baño: ", Necesidades.higiene)
-
-func _on_BotonDiversion_pressed():
-	Necesidades.modificar_diversion(20)
-
-	print("Diversion luego de divertirse: ", Necesidades.diversion)
-
 func _on_Pingu_llego_al_destino():
 	if habitacion_actual == 2:
 		habitacion_actual_nodo.pingu_llego_a_la_cama()
 
 func actualizar_monedas():
 	label_monedas.text = str(Dinero.monedas)
+
+func _on_BotonTienda_pressed():
+	var escena_tienda = load("res://tscn/Tienda.tscn")
+	var tienda = escena_tienda.instance()
+	add_child(tienda)

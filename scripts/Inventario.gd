@@ -7,10 +7,8 @@ var food = {
 	"dona": 5
 }
 
-
 func _ready():
 	cargar_inventario()
-
 
 func cargar_inventario():
 	var archivo = File.new()

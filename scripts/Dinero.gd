@@ -1,5 +1,7 @@
 extends Node
 
+signal monedas_cambiaron
+
 var monedas = 250
 
 func sumar_monedas(cantidad):
@@ -8,18 +10,20 @@ func sumar_monedas(cantidad):
 	
 	monedas += cantidad
 	print("Monedas: ", monedas)
+	emit_signal("monedas_cambiaron")
 
 func restar_monedas(cantidad):
 	if cantidad <= 0:
-		return false
+		return
 	
 	if cantidad > monedas:
 		print("No hay suficientes monedas.")
-		return false
+		return
 	
 	monedas -= cantidad
 	print("Monedas: ", monedas)
-	return true
+	print("EMITIENDO SEÑAL")
+	emit_signal("monedas_cambiaron")
 
 func puede_pagar(cantidad):
 	return monedas >= cantidad
