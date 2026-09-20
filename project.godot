@@ -16,8 +16,9 @@ config/icon="res://icon.png"
 [autoload]
 
 Necesidades="*res://scripts/Necesidades.gd"
-Tiempo="*res://scripts/Tiempo.gd"
 Inventario="*res://scripts/Inventario.gd"
+Dinero="*res://scripts/Dinero.gd"
+Tiempo="*res://scripts/Tiempo.gd"
 
 [display]
 

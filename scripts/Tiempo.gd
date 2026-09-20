@@ -90,14 +90,18 @@ func guardar_estado():
 		"higiene": Necesidades.higiene,
 		"energia": Necesidades.energia,
 		"diversion": Necesidades.diversion,
-		"pingu_durmiendo": Necesidades.pingu_durmiendo
-	}
+		"pingu_durmiendo": Necesidades.pingu_durmiendo}
+		
 	datos ["food"] = {
-		"pescado": Inventario.food["pescado"]
-	}
+		"pescado": Inventario.food["pescado"],
+		"dona": Inventario.food["dona"],
+		"pizza": Inventario.food["pizza"],
+		"sushi": Inventario.food["sushi"],
+		"torta": Inventario.food["torta"],
+		"completo": Inventario.food["completo"]}
+		
 	datos ["economia"] = {
-		"monedas": Dinero.monedas
-	}
+		"monedas": Dinero.monedas}
 
 	var archivo = File.new()
 	var error = archivo.open(RUTA_GUARDADO, File.WRITE)

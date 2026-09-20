@@ -4,7 +4,11 @@ const RUTA_GUARDADO = "user://save_data.json"
 
 var food = {
 	"pescado": 5,
-	"dona": 5
+	"dona": 5,
+	"pizza": 0,
+	"sushi": 0,
+	"torta": 0,
+	"completo": 0
 }
 
 func _ready():
@@ -32,3 +36,18 @@ func cargar_inventario():
 	if datos.has("food"):
 		if datos["food"].has("pescado"):
 			food["pescado"] = int(datos["food"]["pescado"])
+			
+		if datos["food"].has("dona"):
+			food["dona"] = int(datos["food"]["dona"])
+	
+		if datos["food"].has("pizza"):
+			food["pizza"] = int(datos["food"]["pizza"])
+	
+		if datos["food"].has("sushi"):
+			food["sushi"] = int(datos["food"]["sushi"])
+	
+		if datos["food"].has("torta"):
+			food["torta"] = int(datos["food"]["torta"])
+	
+		if datos["food"].has("completo"):
+			food["completo"] = int(datos["food"]["completo"])
