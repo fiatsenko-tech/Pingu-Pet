@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/fondos/Bano.png" type="Texture" id=1]
+[ext_resource path="res://assets/ChatGPT Image 20 sept 2026, 07_50_09 p.m..png" type="Texture" id=1]
 [ext_resource path="res://assets/Baño/Jabon.jpeg" type="Texture" id=2]
 [ext_resource path="res://assets/Baño/Ducha.jpeg" type="Texture" id=3]
 [ext_resource path="res://scripts/Jabon.gd" type="Script" id=4]
