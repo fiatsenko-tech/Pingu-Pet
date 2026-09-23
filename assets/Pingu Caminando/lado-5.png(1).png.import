@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ChatGPT Image 20 sept 2026, 07_50_09 p.m..png-338ae0dff741b8cbc676e350e9ca798f.stex"
+path="res://.import/lado-5.png(1).png-1bd87790c186cedbaebbb654642ad4de.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ChatGPT Image 20 sept 2026, 07_50_09 p.m..png"
-dest_files=[ "res://.import/ChatGPT Image 20 sept 2026, 07_50_09 p.m..png-338ae0dff741b8cbc676e350e9ca798f.stex" ]
+source_file="res://assets/Pingu Caminando/lado-5.png(1).png"
+dest_files=[ "res://.import/lado-5.png(1).png-1bd87790c186cedbaebbb654642ad4de.stex" ]
 
 [params]
 

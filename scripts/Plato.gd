@@ -188,6 +188,10 @@ func comer_alimento():
 		pingu.mostrar_mensaje("Estoy lleno u.u")
 		return
 
+	pingu.animated_sprite.stop()
+	pingu.animated_sprite.frame = 0
+	pingu.animated_sprite.play("comer")
+
 	alimentos_en_plato[alimento_actual] -= 1
 
 	Necesidades.modificar_hambre(17)

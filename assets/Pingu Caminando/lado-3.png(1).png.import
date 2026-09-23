@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pingu.png-d08ae72612f31e5ffec840c624652775.stex"
+path="res://.import/lado-3.png(1).png-a6cbc9401fc3cf8c9b14f7fed36d800a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Pingu.png"
-dest_files=[ "res://.import/Pingu.png-d08ae72612f31e5ffec840c624652775.stex" ]
+source_file="res://assets/Pingu Caminando/lado-3.png(1).png"
+dest_files=[ "res://.import/lado-3.png(1).png-a6cbc9401fc3cf8c9b14f7fed36d800a.stex" ]
 
 [params]
 

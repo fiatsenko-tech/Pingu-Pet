@@ -13,26 +13,26 @@ margin_bottom = 1920.0
 
 [node name="Label" type="Label" parent="PanelTienda"]
 margin_left = 400.0
-margin_top = 85.0
+margin_top = 125.0
 margin_right = 460.0
-margin_bottom = 112.0
+margin_bottom = 152.0
 rect_min_size = Vector2( 60, 0 )
 rect_scale = Vector2( 5, 5 )
 text = "Tienda"
 
 [node name="BotonCerrar" type="Button" parent="PanelTienda"]
-margin_left = 938.0
+margin_left = 891.0
 margin_top = 57.0
-margin_right = 958.0
-margin_bottom = 77.0
+margin_right = 923.0
+margin_bottom = 89.0
 rect_scale = Vector2( 4, 4 )
 text = "X"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelTienda"]
-margin_left = 80.0
-margin_top = 555.0
-margin_right = 984.0
-margin_bottom = 1287.0
+margin_left = -8.0
+margin_top = 427.0
+margin_right = 1071.0
+margin_bottom = 1285.0
 
 [node name="ListaProductos" type="VBoxContainer" parent="PanelTienda/ScrollContainer"]
 custom_constants/separation = 250

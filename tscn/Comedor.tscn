@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://assets/ChatGPT Image 20 sept 2026, 07_50_09 p.m..png" type="Texture" id=1]
+[ext_resource path="res://assets/fondos/ChatGPT Image 20 sept 2026, 07_50_09 p.m..png" type="Texture" id=1]
 [ext_resource path="res://assets/Comedor/ChatGPT Image 12 sept 2026, 09_59_38 p.m..png" type="Texture" id=2]
 [ext_resource path="res://scripts/Refrigerador.gd" type="Script" id=3]
 [ext_resource path="res://assets/Comedor/ChatGPT Image 12 sept 2026, 09_57_14 p.m..png" type="Texture" id=4]
@@ -11,9 +11,10 @@
 [ext_resource path="res://Assets Definitivos/Completo.png" type="Texture" id=9]
 [ext_resource path="res://Assets Definitivos/Pizza.png" type="Texture" id=10]
 [ext_resource path="res://scripts/Plato.gd" type="Script" id=11]
+[ext_resource path="res://assets/Comedor/ChatGPT Image 12 sept 2026, 10_52_00 p.m..png" type="Texture" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 176.5, 316 )
+extents = Vector2( 156.75, 275.5 )
 
 [node name="Comedor" type="Control"]
 anchor_right = 1.0
@@ -29,31 +30,31 @@ __meta__ = {
 }
 
 [node name="PosicionPingu" type="Position2D" parent="."]
-position = Vector2( 658, 986 )
+position = Vector2( 574, 913 )
 
 [node name="Refrigerador" type="Node2D" parent="."]
-position = Vector2( 177, 867 )
+position = Vector2( 156, 735 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Refrigerador"]
-scale = Vector2( 0.392877, 0.428212 )
+scale = Vector2( 0.38386, 0.376284 )
 texture = ExtResource( 4 )
 
 [node name="ZonaComida" type="Area2D" parent="Refrigerador"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Refrigerador/ZonaComida"]
-position = Vector2( -40, 0 )
+position = Vector2( -19.75, -0.5 )
 shape = SubResource( 1 )
 
 [node name="PanelRefrigerador" type="Panel" parent="Refrigerador"]
 margin_left = 184.0
 margin_top = -470.0
-margin_right = 599.0
-margin_bottom = -74.0
+margin_right = 679.0
+margin_bottom = -6.0
 
 [node name="TextureRect" type="TextureRect" parent="Refrigerador/PanelRefrigerador"]
-margin_right = 415.0
-margin_bottom = 398.0
+margin_right = 493.0
+margin_bottom = 466.0
 
 [node name="EspacioPescado" type="Control" parent="Refrigerador/PanelRefrigerador"]
 margin_left = 44.0
@@ -180,14 +181,23 @@ margin_bottom = 95.0
 text = "x0"
 
 [node name="BotonCerrar" type="Button" parent="Refrigerador/PanelRefrigerador"]
-margin_left = 353.0
-margin_right = 373.0
-margin_bottom = 20.0
+margin_left = 416.0
+margin_top = 15.0
+margin_right = 436.0
+margin_bottom = 35.0
 rect_scale = Vector2( 3, 3 )
 text = "X"
 
+[node name="Mesa" type="Node2D" parent="."]
+position = Vector2( 582, 1173 )
+
+[node name="Sprite" type="Sprite" parent="Mesa"]
+position = Vector2( -31, 19 )
+scale = Vector2( 0.460469, 0.415946 )
+texture = ExtResource( 12 )
+
 [node name="Plato" type="Node2D" parent="."]
-position = Vector2( 572, 1290 )
+position = Vector2( 548, 1020 )
 script = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="Plato"]
@@ -222,13 +232,3 @@ margin_top = 4.0
 margin_right = -108.0
 margin_bottom = 64.0
 text = "<"
-
-[node name="Mesa" type="Node2D" parent="."]
-position = Vector2( 904, 851 )
-
-[node name="Sprite" type="Sprite" parent="Mesa"]
-
-[node name="Silla" type="Node2D" parent="."]
-position = Vector2( 856, 1028 )
-
-[node name="Sprite" type="Sprite" parent="Silla"]
