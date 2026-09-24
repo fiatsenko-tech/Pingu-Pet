@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Pingu.gd" type="Script" id=1]
 [ext_resource path="res://assets/Pingu Caminando/lado-5.png(1).png" type="Texture" id=2]
@@ -23,9 +23,37 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
-"loop": true,
+"loop": false,
 "name": "idle",
 "speed": 1.5
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [  ],
+"loop": false,
+"name": "espuma_1",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "espuma_2",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "espuma_3",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "espuma_4",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "sin_espuma",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -42,6 +70,10 @@ script = ExtResource( 1 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 3 )
 animation = "comer"
+
+[node name="AnimatedSpriteEspuma" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
+animation = "espuma_2"
 
 [node name="AreaComida" type="Area2D" parent="."]
 

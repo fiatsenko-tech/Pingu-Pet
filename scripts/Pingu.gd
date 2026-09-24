@@ -6,19 +6,23 @@ var posicion_destino = Vector2.ZERO
 var moviendose = false
 var direccion = 0
 var mensaje_tiempo = 0.0
+var nivel_espuma = 0
 
 signal llego_al_destino
 
 onready var area_comida = $AreaComida
 onready var mensaje = $Mensaje
 onready var animated_sprite = $AnimatedSprite
+onready var animated_sprite_espuma = $AnimatedSpriteEspuma
 
 func _ready():
 	area_comida.connect("area_entered", self, "_on_area_comida_entered")
 	area_comida.connect("area_exited", self, "_on_area_comida_exited")
 	
 	animated_sprite.connect("animation_finished", self, "_on_animation_finished")
+	
 	animated_sprite.play("idle")
+	animated_sprite_espuma.play("sin_espuma")
 
 func _on_area_comida_entered(area):
 	print("Comida entro en pingu")
@@ -71,7 +75,6 @@ func entrar_desde_izquierda():
 	direccion = 1
 	animated_sprite.flip_h = false
 
-
 func entrar_desde_derecha():
 	global_position.x = 1250
 	moviendose = true
@@ -81,3 +84,11 @@ func entrar_desde_derecha():
 func quedarse_en_destino():
 	global_position = posicion_destino
 	moviendose = false
+
+func actualizar_espuma(nivel):
+	match nivel:
+		0: animated_sprite_espuma.play("sin_espuma")
+		1: animated_sprite_espuma.play("espuma_1")
+		2: animated_sprite_espuma.play("espuma_2")
+		3: animated_sprite_espuma.play("espuma_3")
+		4: animated_sprite_espuma.play("espuma_4")

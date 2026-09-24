@@ -4,11 +4,17 @@ var arrastrando = false
 var offset = Vector2()
 var posicion_original = Vector2()
 
+var tocando_pingu = false
+var distancia_ducha = 0.0
+var ultima_posicion = Vector2.ZERO
+var distancia_por_nivel = 150.0
+
 onready var area = $Area2D
 onready var bano = get_parent()
 
 func _ready():
 	area.connect("area_entered", self, "_on_area_entered")
+	area.connect("area_exited", self, "_on_area_exited")
 	posicion_original = global_position
 
 
@@ -28,18 +34,33 @@ func _input(event):
 
 func _on_area_entered(area_entrante):
 	if area_entrante.name == "AreaBano":
-		if not bano.enjabonado:
-			print("Pingu no esta enjabonado")
-			return
+		tocando_pingu = true
+		ultima_posicion = global_position
+		print("Ducha tocando a pingu")
 
-		var higiene_actual = Necesidades.higiene
-		var puntos_faltantes = 100 - higiene_actual
 
-		Necesidades.higiene = 100
-		bano.enjabonado = false
+func _on_area_exited(area_saliente):
+	if area_saliente.name == "AreaBano":
+		tocando_pingu = false
+		print("Ducha dejo de tocar a pingu")
 
-		print("Ducha aplicada")
-		print("Higiene antes: ", higiene_actual)
-		print("Ducha: +", puntos_faltantes)
-		print("Higiene despues: ", Necesidades.higiene)
-		print("Enjabonado: ", bano.enjabonado)
+
+func _process(delta):
+	if tocando_pingu and arrastrando:
+		var distancia = global_position.distance_to(ultima_posicion)
+
+		distancia_ducha += distancia
+		ultima_posicion = global_position
+
+		if distancia_ducha >= distancia_por_nivel:
+			distancia_ducha -= distancia_por_nivel
+
+			if bano.pingu.nivel_espuma > 0:
+				bano.pingu.nivel_espuma -= 1
+				bano.pingu.actualizar_espuma(bano.pingu.nivel_espuma)
+
+				print("Nivel de espuma: ", bano.pingu.nivel_espuma)
+
+				if bano.pingu.nivel_espuma == 0:
+					bano.enjabonado = false
+					print("Pingu terminó de bañarse")

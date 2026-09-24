@@ -4,7 +4,7 @@ var enjabonado = false
 var aporte_jabon = 0
 
 onready var jabon = $Jabon
-onready var pingu = get_parent().get_node("Pingu")
+onready var pingu = get_tree().get_root().find_node("Pingu", true, false)
 
 func _ready():
 	jabon.area.connect("area_entered", self, "_on_jabon_area_entered")
