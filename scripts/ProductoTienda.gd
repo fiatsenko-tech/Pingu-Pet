@@ -23,7 +23,6 @@ func _on_BotonComprar_pressed():
 	if Dinero.puede_pagar(precio_producto):
 		Dinero.restar_monedas(precio_producto)
 		Inventario.food[id_producto] += 1
-		print("Compra realizada: ", nombre_producto)
-		print("cantidad en inventario: ", Inventario.food[id_producto])
+
 	else:
 		print("no tienes suficiente plata")

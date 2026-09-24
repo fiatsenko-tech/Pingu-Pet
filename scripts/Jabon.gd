@@ -45,33 +45,22 @@ func _process(delta):
 
 		distancia_jabon += distancia
 		ultima_posicion = global_position
-		print("Distancia acumulada: ", distancia_jabon)
 
 		if distancia_jabon >= distancia_por_nivel:
 			distancia_jabon -= distancia_por_nivel
 
 			if pingu == null:
-				print("ERROR: Jabon no encontró a Pingu")
 				return
-
-			print("Pingu encontrado: ", pingu)
-			print("Nivel de espuma actual: ", pingu.nivel_espuma)
 
 			if pingu.nivel_espuma < 4:
 				pingu.nivel_espuma += 1
-	
-				print("DESPUES DE SUMAR: ", pingu.nivel_espuma)
-	
-				actualizar_espuma()
-		
-				print("DESPUES DE ACTUALIZAR ESPUMA: ", pingu.nivel_espuma)
 
+				actualizar_espuma()
 
 func actualizar_espuma():
 	if pingu == null:
 		return
-		
-	print("ESPUMA CAMBIÓ A NIVEL: ", pingu.nivel_espuma)	
+
 	pingu.actualizar_espuma(pingu.nivel_espuma)
 
 
@@ -79,10 +68,8 @@ func _on_area_entered(area_entrante):
 	if area_entrante.name == "AreaBano":
 		tocando_pingu = true
 		ultima_posicion = global_position
-		print("Jabon tocando a pingu")
 
 
 func _on_area_exited(area_saliente):
 	if area_saliente.name == "AreaBano":
 		tocando_pingu = false
-		print("Jabon dejo de tocar a pingu")

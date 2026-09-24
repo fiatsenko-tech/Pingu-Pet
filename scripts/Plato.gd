@@ -47,7 +47,6 @@ func _ready():
 
 func agregar_alimento(nombre_alimento):
 	if not texturas_alimentos.has(nombre_alimento):
-		print("ERROR: No existe la textura de: ", nombre_alimento)
 		return
 
 	if not alimentos_en_plato.has(nombre_alimento):
@@ -148,10 +147,7 @@ func _on_ImagenAlimento_gui_input(event):
 			else:
 				arrastrando = false
 
-				print("comida soltada")
-
 				if comida_dentro_de_pingu():
-					print("¡COMIDA DENTRO DEL AREA DE PINGU!")
 
 					comer_alimento()
 				else:
@@ -172,19 +168,12 @@ func comida_dentro_de_pingu():
 	var rect_global = imagen_alimento.get_global_rect()
 	var centro_comida = rect_global.position + rect_global.size / 2
 	var posicion_pingu = collision_area_pingu.global_position
-
 	var distancia = centro_comida.distance_to(posicion_pingu)
-
-	print("CENTRO COMIDA REAL: ", centro_comida)
-	print("AREA PINGU: ", posicion_pingu)
-	print("DISTANCIA: ", distancia)
 
 	return distancia < 150
 
-
 func comer_alimento():
 	if Necesidades.hambre >= 100:
-		print("Pingu está lleno")
 		pingu.mostrar_mensaje("Estoy lleno u.u")
 		return
 
@@ -195,9 +184,6 @@ func comer_alimento():
 	alimentos_en_plato[alimento_actual] -= 1
 
 	Necesidades.modificar_hambre(17)
-
-	print("Pingu comió ", alimento_actual)
-	print("Hambre actual: ", Necesidades.hambre)
 
 	if alimentos_en_plato[alimento_actual] <= 0:
 		alimentos_en_plato.erase(alimento_actual)

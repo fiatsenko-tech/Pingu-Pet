@@ -25,9 +25,3 @@ func _on_jabon_area_entered(area_entrante):
 			100
 		)
 		enjabonado = true
-		
-		print("Jabon aplicado")
-		print("higiene antes: ", higiene_actual)
-		print("aporte jabon:", aporte_jabon)
-		print("higiene despues", Necesidades.higiene)
-		print("enjabonado", enjabonado)

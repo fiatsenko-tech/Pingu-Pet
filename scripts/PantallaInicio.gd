@@ -92,21 +92,16 @@ func guardar_datos(datos):
 	var error = archivo.open(RUTA_GUARDADO, File.WRITE)
 
 	if error != OK:
-		print("Error al abrir el archivo para guardar.")
 		return
 
 	archivo.store_string(to_json(datos))
 	archivo.close()
-
-	print("Partida guardada correctamente.")
-
 
 func cargar_datos():
 	var archivo = File.new()
 	var error = archivo.open(RUTA_GUARDADO, File.READ)
 
 	if error != OK:
-		print("No se pudo cargar la partida.")
 		return {}
 
 	var contenido = archivo.get_as_text()
@@ -115,7 +110,6 @@ func cargar_datos():
 	var datos = parse_json(contenido)
 
 	if datos == null:
-		print("El archivo de guardado está vacío o corrupto.")
 		return {}
 
 	return datos

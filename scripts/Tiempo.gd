@@ -107,14 +107,10 @@ func guardar_estado():
 	var error = archivo.open(RUTA_GUARDADO, File.WRITE)
 
 	if error != OK:
-		print("Error al guardar el estado.")
 		return
 
 	archivo.store_string(to_json(datos))
 	archivo.close()
-
-	print("Estado guardado.")
-
 
 func cargar_datos():
 	var archivo = File.new()
