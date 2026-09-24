@@ -9,6 +9,8 @@ var mensaje_tiempo = 0.0
 var nivel_espuma = 0
 
 signal llego_al_destino
+signal termino_de_acostarse
+signal termino_de_despertar
 
 onready var area_comida = $AreaComida
 onready var mensaje = $Mensaje
@@ -63,6 +65,19 @@ func _process(delta):
 func _on_animation_finished():
 	if animated_sprite.animation == "comer":
 		animated_sprite.play("idle")
+	
+	elif animated_sprite.animation == "acostarse":
+		print("Animación acostarse terminó")
+		emit_signal("termino_de_acostarse")
+	
+	elif animated_sprite.animation == "cerrar_ojos":
+		print("Animación cerrar_ojos terminó → durmiendo")
+		animated_sprite.play("durmiendo")
+	
+	elif animated_sprite.animation == "abrir_ojos":
+		print("Animación abrir_ojos terminó → acostado")
+		animated_sprite.play("acostado")
+		emit_signal("termino_de_despertar")
 
 func mostrar_mensaje(texto):
 	mensaje.text = texto
@@ -92,3 +107,12 @@ func actualizar_espuma(nivel):
 		2: animated_sprite_espuma.play("espuma_2")
 		3: animated_sprite_espuma.play("espuma_3")
 		4: animated_sprite_espuma.play("espuma_4")
+
+func acostarse():
+	animated_sprite.play("acostarse")
+
+func dormirse():
+	animated_sprite.play("cerrar_ojos")
+
+func despertar():
+	animated_sprite.play("abrir_ojos")

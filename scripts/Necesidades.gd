@@ -36,12 +36,12 @@ func pasar_tiempo(segundos):
 		
 		if pingu_durmiendo:
 			modificar_energia(minutos)
-			
-			if energia >= 100:
-				pingu_durmiendo = false
-				
-			emit_signal("energia_cambiada")
 			print("Energia despues de dormir: ", energia)
+		else:
+			modificar_energia(-minutos)
+			print("Energia despues de estar despierto: ", energia)
+		
+		emit_signal("energia_cambiada")
 
 func cargar_necesidades():
 	var archivo = File.new()

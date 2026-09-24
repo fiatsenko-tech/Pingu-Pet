@@ -23,7 +23,11 @@ func _ready():
 	boton_izquierdo.connect("pressed", self, "_on_BotonIzquierdo_pressed")
 	boton_derecho.connect("pressed", self, "_on_BotonDerecho_pressed")
 	boton_tienda.connect("pressed", self, "_on_BotonTienda_pressed")
+	
 	pingu.connect("llego_al_destino", self, "_on_Pingu_llego_al_destino")
+	pingu.connect("termino_de_acostarse", self, "_on_Pingu_termino_de_acostarse")
+	pingu.connect("termino_de_despertar", self, "_on_Pingu_termino_de_despertar")
+	
 	label_monedas.text = str(Dinero.monedas)
 	
 	actualizar_monedas()
@@ -80,6 +84,14 @@ func _on_BotonDerecho_pressed():
 func _on_Pingu_llego_al_destino():
 	if habitacion_actual == 2:
 		habitacion_actual_nodo.pingu_llego_a_la_cama()
+
+func _on_Pingu_termino_de_acostarse():
+	if habitacion_actual == 2:
+		habitacion_actual_nodo.pingu_termino_de_acostarse()
+
+func _on_Pingu_termino_de_despertar():
+	if habitacion_actual == 2:
+		habitacion_actual_nodo.pingu_termino_de_despertar()
 
 func actualizar_monedas():
 	label_monedas.text = str(Dinero.monedas)

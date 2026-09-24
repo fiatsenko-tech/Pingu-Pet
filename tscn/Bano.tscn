@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/fondos/ChatGPT Image 20 sept 2026, 07_50_09 p.m..png" type="Texture" id=1]
 [ext_resource path="res://assets/Baño/Jabon.jpeg" type="Texture" id=2]
@@ -9,6 +9,19 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 81, 64.5 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [  ],
+"loop": false,
+"name": "agua",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": false,
+"name": "sin_agua",
+"speed": 5.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 165, 143.5 )
@@ -53,6 +66,10 @@ script = ExtResource( 6 )
 [node name="Sprite" type="Sprite" parent="Ducha"]
 scale = Vector2( 0.608303, 0.518051 )
 texture = ExtResource( 3 )
+
+[node name="AnimatedSpriteAgua" type="AnimatedSprite" parent="Ducha"]
+frames = SubResource( 3 )
+animation = "sin_agua"
 
 [node name="Area2D" type="Area2D" parent="Ducha"]
 collision_layer = 2
