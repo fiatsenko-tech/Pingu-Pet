@@ -23,7 +23,7 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="PosicionPingu" type="Position2D" parent="."]
-position = Vector2( 370, 912 )
+position = Vector2( 385, 1100 )
 
 [node name="Cama" type="Node2D" parent="."]
 position = Vector2( 764, 1006 )

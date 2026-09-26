@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fondos/ChatGPT Image 20 sept 2026, 07_50_09 p.m..png" type="Texture" id=1]
 [ext_resource path="res://assets/Comedor/ChatGPT Image 12 sept 2026, 09_59_38 p.m..png" type="Texture" id=2]
 [ext_resource path="res://scripts/Refrigerador.gd" type="Script" id=3]
-[ext_resource path="res://assets/Comedor/ChatGPT Image 12 sept 2026, 09_57_14 p.m..png" type="Texture" id=4]
+[ext_resource path="res://Assets Definitivos/comedor/ChatGPT Image 25 sept 2026, 06_18_30 p.m..png" type="Texture" id=4]
 [ext_resource path="res://assets/Comidas/ChatGPT Image 12 sept 2026, 10_59_41 p.m..png" type="Texture" id=5]
 [ext_resource path="res://Assets Definitivos/Dona.png" type="Texture" id=6]
 [ext_resource path="res://Assets Definitivos/Sushi.png" type="Texture" id=7]
@@ -11,10 +11,11 @@
 [ext_resource path="res://Assets Definitivos/Completo.png" type="Texture" id=9]
 [ext_resource path="res://Assets Definitivos/Pizza.png" type="Texture" id=10]
 [ext_resource path="res://scripts/Plato.gd" type="Script" id=11]
-[ext_resource path="res://assets/Comedor/ChatGPT Image 12 sept 2026, 10_52_00 p.m..png" type="Texture" id=12]
+[ext_resource path="res://Assets Definitivos/comedor/ChatGPT Image 25 sept 2026, 05_59_02 p.m..png" type="Texture" id=12]
+[ext_resource path="res://Assets Definitivos/comedor/ChatGPT Image 25 sept 2026, 05_41_11 p.m..png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 156.75, 275.5 )
+extents = Vector2( 206.875, 275.5 )
 
 [node name="Comedor" type="Control"]
 anchor_right = 1.0
@@ -30,161 +31,173 @@ __meta__ = {
 }
 
 [node name="PosicionPingu" type="Position2D" parent="."]
-position = Vector2( 574, 913 )
+position = Vector2( 546, 1100 )
 
 [node name="Refrigerador" type="Node2D" parent="."]
-position = Vector2( 156, 735 )
+position = Vector2( 181, 765 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Refrigerador"]
-scale = Vector2( 0.38386, 0.376284 )
-texture = ExtResource( 4 )
+scale = Vector2( 0.397271, 0.387037 )
+texture = ExtResource( 12 )
 
 [node name="ZonaComida" type="Area2D" parent="Refrigerador"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Refrigerador/ZonaComida"]
-position = Vector2( -19.75, -0.5 )
 shape = SubResource( 1 )
 
 [node name="PanelRefrigerador" type="Panel" parent="Refrigerador"]
-margin_left = 184.0
-margin_top = -470.0
-margin_right = 679.0
-margin_bottom = -6.0
+visible = false
+margin_left = 235.0
+margin_top = -624.0
+margin_right = 894.0
+margin_bottom = 184.0
 
 [node name="TextureRect" type="TextureRect" parent="Refrigerador/PanelRefrigerador"]
-margin_right = 493.0
-margin_bottom = 466.0
+anchor_right = 2.39757
+anchor_bottom = 2.62252
+margin_right = -486.0
+margin_bottom = -649.0
+rect_scale = Vector2( 0.552, 0.552 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="EspacioPescado" type="Control" parent="Refrigerador/PanelRefrigerador"]
-margin_left = 44.0
-margin_top = 52.0
-margin_right = 98.0
-margin_bottom = 104.0
+margin_left = 143.0
+margin_top = 148.0
+margin_right = 247.0
+margin_bottom = 237.0
 
 [node name="TextureButton" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioPescado"]
-margin_left = -15.0
-margin_top = 11.0
-margin_right = 1521.0
-margin_bottom = 1035.0
-rect_scale = Vector2( 0.07, 0.07 )
+margin_left = -4.0
+margin_top = 1.0
+margin_right = 1532.0
+margin_bottom = 1025.0
+rect_scale = Vector2( 0.09, 0.09 )
 texture_normal = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioPescado"]
-margin_left = 25.0
-margin_top = 81.0
-margin_right = 40.0
-margin_bottom = 95.0
+margin_left = 99.0
+margin_top = 78.0
+margin_right = 116.0
+margin_bottom = 92.0
+rect_scale = Vector2( 1.3, 1.3 )
 text = "x0"
 
 [node name="EspacioDona" type="Control" parent="Refrigerador/PanelRefrigerador"]
-margin_left = 153.0
-margin_top = 56.0
-margin_right = 238.0
-margin_bottom = 142.0
+margin_left = 356.0
+margin_top = 134.0
+margin_right = 459.0
+margin_bottom = 235.0
 
 [node name="TextureButton2" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioDona"]
-margin_left = -9.0
-margin_top = -10.0
-margin_right = 1245.0
-margin_bottom = 1244.0
-rect_scale = Vector2( 0.08, 0.08 )
+margin_left = -18.0
+margin_top = -13.0
+margin_right = 1236.0
+margin_bottom = 1241.0
+rect_scale = Vector2( 0.109, 0.109 )
 texture_normal = ExtResource( 6 )
 
 [node name="Label2" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioDona"]
-margin_left = 35.0
-margin_top = 84.0
-margin_right = 54.0
-margin_bottom = 98.0
+margin_left = 118.0
+margin_top = 92.0
+margin_right = 137.0
+margin_bottom = 106.0
 text = "x0"
 
 [node name="EspacioPizza" type="Control" parent="Refrigerador/PanelRefrigerador"]
-margin_left = 265.0
-margin_top = 69.0
-margin_right = 352.0
-margin_bottom = 142.0
+margin_left = 353.0
+margin_top = 275.0
+margin_right = 468.0
+margin_bottom = 358.0
 
 [node name="TextureButton4" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioPizza"]
-margin_left = 7.0
-margin_top = -12.0
-margin_right = 1261.0
-margin_bottom = 1242.0
-rect_scale = Vector2( 0.07, 0.07 )
+margin_left = 6.0
+margin_top = -23.0
+margin_right = 1260.0
+margin_bottom = 1231.0
+rect_rotation = 13.2
+rect_scale = Vector2( 0.094, 0.094 )
 texture_normal = ExtResource( 10 )
 
 [node name="Label3" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioPizza"]
-margin_left = 33.0
-margin_top = 76.0
-margin_right = 73.0
-margin_bottom = 90.0
+margin_left = 114.0
+margin_top = 80.0
+margin_right = 154.0
+margin_bottom = 94.0
 text = "x0"
 
 [node name="EspacioSushi" type="Control" parent="Refrigerador/PanelRefrigerador"]
-margin_left = 29.0
-margin_top = 217.0
-margin_right = 117.0
-margin_bottom = 296.0
+margin_left = 161.0
+margin_top = 274.0
+margin_right = 256.0
+margin_bottom = 369.0
 
 [node name="TextureButton6" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioSushi"]
-margin_right = 1254.0
-margin_bottom = 1254.0
-rect_scale = Vector2( 0.07, 0.07 )
+margin_left = -23.0
+margin_top = -24.0
+margin_right = 1231.0
+margin_bottom = 1230.0
+rect_scale = Vector2( 0.106, 0.106 )
 texture_normal = ExtResource( 7 )
 
 [node name="Label4" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioSushi"]
-margin_left = 20.0
-margin_top = 88.0
-margin_right = 60.0
-margin_bottom = 102.0
+margin_left = 97.0
+margin_top = 78.0
+margin_right = 137.0
+margin_bottom = 92.0
 text = "x0"
 
 [node name="EspacioTorta" type="Control" parent="Refrigerador/PanelRefrigerador"]
 margin_left = 161.0
-margin_top = 216.0
-margin_right = 228.0
-margin_bottom = 284.0
+margin_top = 393.0
+margin_right = 280.0
+margin_bottom = 488.0
 
 [node name="TextureButton5" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioTorta"]
-margin_left = -19.0
-margin_top = -2.0
-margin_right = 1235.0
-margin_bottom = 1252.0
-rect_scale = Vector2( 0.07, 0.07 )
+margin_left = -20.0
+margin_top = -17.0
+margin_right = 1234.0
+margin_bottom = 1237.0
+rect_scale = Vector2( 0.098, 0.098 )
 texture_normal = ExtResource( 8 )
 
 [node name="Label5" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioTorta"]
-margin_left = 13.0
-margin_top = 78.0
-margin_right = 53.0
-margin_bottom = 92.0
+margin_left = 91.0
+margin_top = 87.0
+margin_right = 131.0
+margin_bottom = 101.0
 text = "x0"
 
 [node name="EspacioCompleto" type="Control" parent="Refrigerador/PanelRefrigerador"]
-margin_left = 278.0
-margin_top = 218.0
-margin_right = 362.0
-margin_bottom = 299.0
+margin_left = 347.0
+margin_top = 396.0
+margin_right = 453.0
+margin_bottom = 493.0
 
 [node name="TextureButton3" type="TextureButton" parent="Refrigerador/PanelRefrigerador/EspacioCompleto"]
-margin_left = -8.0
-margin_top = -11.0
-margin_right = 1246.0
-margin_bottom = 1243.0
-rect_scale = Vector2( 0.07, 0.07 )
+margin_left = -41.0
+margin_top = 13.0
+margin_right = 1213.0
+margin_bottom = 1267.0
+rect_rotation = -26.4
+rect_scale = Vector2( 0.124, 0.124 )
 texture_normal = ExtResource( 9 )
 
 [node name="Label6" type="Label" parent="Refrigerador/PanelRefrigerador/EspacioCompleto"]
-margin_left = 20.0
-margin_top = 81.0
-margin_right = 60.0
-margin_bottom = 95.0
+margin_left = 137.0
+margin_top = 92.0
+margin_right = 177.0
+margin_bottom = 106.0
 text = "x0"
 
 [node name="BotonCerrar" type="Button" parent="Refrigerador/PanelRefrigerador"]
-margin_left = 416.0
-margin_top = 15.0
-margin_right = 436.0
-margin_bottom = 35.0
+margin_left = 518.0
+margin_top = 10.0
+margin_right = 540.0
+margin_bottom = 32.0
 rect_scale = Vector2( 3, 3 )
 text = "X"
 
@@ -192,17 +205,17 @@ text = "X"
 position = Vector2( 582, 1173 )
 
 [node name="Sprite" type="Sprite" parent="Mesa"]
-position = Vector2( -31, 19 )
-scale = Vector2( 0.460469, 0.415946 )
-texture = ExtResource( 12 )
+position = Vector2( -19, 99.0001 )
+scale = Vector2( 0.597507, 0.551961 )
+texture = ExtResource( 4 )
 
 [node name="Plato" type="Node2D" parent="."]
-position = Vector2( 548, 1020 )
+position = Vector2( 552, 1107 )
 script = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="Plato"]
-position = Vector2( 1, 34 )
-scale = Vector2( 0.135807, 0.135156 )
+position = Vector2( 5, 26.0005 )
+scale = Vector2( 0.160351, 0.17207 )
 texture = ExtResource( 2 )
 
 [node name="TextureButtonAlimento" type="TextureButton" parent="Plato"]
@@ -213,22 +226,22 @@ margin_bottom = 42.0
 rect_scale = Vector2( 0.1, 0.1 )
 
 [node name="Label" type="Label" parent="Plato"]
-margin_left = -42.0
+margin_left = -67.0
 margin_top = 79.0
-margin_right = -3.0
+margin_right = -28.0
 margin_bottom = 98.0
 rect_scale = Vector2( 4, 4 )
 
 [node name="BotonIzquierda" type="Button" parent="Plato"]
-margin_left = 100.0
-margin_top = 4.0
-margin_right = 178.0
-margin_bottom = 62.0
+margin_left = 135.0
+margin_top = -7.0
+margin_right = 226.0
+margin_bottom = 64.0
 text = ">"
 
 [node name="BotonDerecha" type="Button" parent="Plato"]
-margin_left = -184.0
-margin_top = 4.0
-margin_right = -108.0
+margin_left = -213.0
+margin_top = -7.0
+margin_right = -121.0
 margin_bottom = 64.0
 text = "<"
