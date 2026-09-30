@@ -59,6 +59,9 @@ func cargar_habitacion():
 	pingu.posicion_destino = posicion_pingu.global_position
 	pingu.global_position = posicion_pingu.global_position
 	pingu.habitacion_actual = habitacion_actual
+	
+	if habitacion_actual != 2:
+		pingu.salir_de_la_cama()
 
 	if habitacion.has_node("Plato"):
 		var plato = habitacion.get_node("Plato")

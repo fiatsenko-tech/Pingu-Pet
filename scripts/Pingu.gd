@@ -4,9 +4,13 @@ var posicion_destino = Vector2.ZERO
 var mensaje_tiempo = 0.0
 var nivel_espuma = 0
 var habitacion_actual = 0
+
 var arrastrando = false
 var offset_arrastre = Vector2.ZERO
 var posicion_anterior = Vector2.ZERO
+var sobre_cama = false
+var posicion_cama = Vector2.ZERO
+var puede_arrastrarse = true
 
 signal llego_al_destino
 signal termino_de_acostarse
@@ -21,7 +25,10 @@ onready var animated_sprite_espuma = $AnimatedSpriteEspuma
 func _ready():
 	area_comida.connect("area_entered", self, "_on_area_comida_entered")
 	area_comida.connect("area_exited", self, "_on_area_comida_exited")
+	
 	area_arrastre.connect("input_event", self, "_on_area_arrastre_input_event")
+	area_arrastre.connect("area_entered", self, "_on_area_arrastre_area_entered")
+	area_arrastre.connect("area_exited", self, "_on_area_arrastre_area_exited")
 	
 	animated_sprite.connect("animation_finished", self, "_on_animation_finished")
 	
@@ -32,18 +39,46 @@ func _on_area_arrastre_input_event(viewport, event, shape_idx):
 	if habitacion_actual != 2:
 		return
 	
+	if not puede_arrastrarse:
+		return
+	
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT:
 			if event.pressed:
-				print("Comenzó arrastre")
 				arrastrando = true
 				posicion_anterior = global_position
 				offset_arrastre = global_position - get_global_mouse_position()
 			else:
-				print("Terminó arrastre")
 				arrastrando = false
-				global_position = posicion_anterior
+				
+				if sobre_cama:
+					global_position = posicion_cama
+					quedarse_en_cama()
+				else:
+					global_position = posicion_anterior
 
+func quedarse_en_cama():
+	puede_arrastrarse = false
+	animated_sprite.play("acostado")
+	emit_signal("termino_de_acostarse")
+
+func _on_area_arrastre_area_entered(area):
+	print("ENTRO A UN AREA: ", area.name)
+	
+	if habitacion_actual != 2:
+		return
+	
+	if area.name == "AreaCama":
+		print("ENCONTRO LA CAMA")
+		sobre_cama = true
+		posicion_cama = area.get_parent().get_node("PosicionPinguCama").global_position
+
+func _on_area_arrastre_area_exited(area):
+	print("SALIO DE UN AREA: ", area.name)
+	
+	if area.name == "AreaCama":
+		sobre_cama = false
+		
 func _on_area_comida_entered(area):
 	print("Comida entro en pingu")
 
@@ -98,3 +133,7 @@ func dormirse():
 
 func despertar():
 	animated_sprite.play("abrir_ojos")
+
+func salir_de_la_cama():
+	puede_arrastrarse = true
+	animated_sprite.play("idle")

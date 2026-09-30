@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/ProductoTienda.gd" type="Script" id=1]
 [ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-3.png(2).png" type="Texture" id=2]
+[ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 54
+outline_size = 12
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 54
+outline_size = 12
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [node name="ProductoTienda" type="Control"]
 anchor_right = 1.0
@@ -19,21 +32,19 @@ margin_right = 164.0
 margin_bottom = 152.0
 
 [node name="Nombre" type="Label" parent="."]
-modulate = Color( 0, 0, 0, 1 )
 margin_left = 229.0
 margin_top = 42.0
-margin_right = 289.0
+margin_right = 312.0
 margin_bottom = 74.0
-rect_scale = Vector2( 3, 3 )
-text = "Nombre"
+custom_fonts/font = SubResource( 1 )
+text = "comida"
 
 [node name="Precio" type="Label" parent="."]
-modulate = Color( 0, 0, 0, 1 )
-margin_left = 587.0
-margin_top = 47.0
-margin_right = 617.0
-margin_bottom = 74.0
-rect_scale = Vector2( 3, 3 )
+margin_left = 552.0
+margin_top = 40.0
+margin_right = 741.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 2 )
 text = "Precio"
 
 [node name="BotonComprar" type="TextureButton" parent="."]

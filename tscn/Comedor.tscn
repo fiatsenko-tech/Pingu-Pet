@@ -35,15 +35,14 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 612, 258 )
-scale = Vector2( 8.64286, 7.97857 )
+position = Vector2( 611, 287 )
+scale = Vector2( 7.26429, 6.41786 )
 texture = ExtResource( 17 )
 
 [node name="PosicionPingu" type="Position2D" parent="."]
 position = Vector2( 546, 1100 )
 
 [node name="Refrigerador" type="Node2D" parent="."]
-visible = false
 position = Vector2( 181, 765 )
 script = ExtResource( 3 )
 
@@ -57,6 +56,7 @@ texture = ExtResource( 12 )
 shape = SubResource( 1 )
 
 [node name="PanelRefrigerador" type="Panel" parent="Refrigerador"]
+visible = false
 margin_left = 235.0
 margin_top = -624.0
 margin_right = 894.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Juego.gd" type="Script" id=1]
 [ext_resource path="res://tscn/Pingu.tscn" type="PackedScene" id=2]
@@ -8,6 +8,13 @@
 [ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-7.png.png" type="Texture" id=6]
 [ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-1.png(4).png" type="Texture" id=7]
 [ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-2.png(3).png" type="Texture" id=8]
+[ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 9 )
 
 [node name="Juego" type="Control"]
 anchor_right = 1.0
@@ -51,14 +58,20 @@ rect_scale = Vector2( 10, 10 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 8 )
 
+[node name="Sprite" type="Sprite" parent="UI"]
+position = Vector2( -61, 26 )
+scale = Vector2( 3.27083, 3.25 )
+texture = ExtResource( 6 )
+
 [node name="LabelMonedas" type="Label" parent="UI"]
 anchor_left = -0.1
 anchor_right = -0.1
-margin_left = 16.0
-margin_top = -12.0
-margin_right = 45.0
-margin_bottom = 2.0
-rect_scale = Vector2( 4, 4 )
+margin_left = -27.0
+margin_top = 10.0
+margin_right = 18.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "1"
 
 [node name="BotonTienda" type="TextureButton" parent="UI"]
 anchor_left = -3.404
@@ -71,8 +84,3 @@ margin_right = 833.16
 margin_bottom = 1691.76
 rect_scale = Vector2( 7, 7 )
 texture_normal = ExtResource( 5 )
-
-[node name="Sprite" type="Sprite" parent="UI"]
-position = Vector2( -61, 26 )
-scale = Vector2( 3.27083, 3.25 )
-texture = ExtResource( 6 )

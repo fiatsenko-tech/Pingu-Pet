@@ -100,6 +100,7 @@ frames = SubResource( 3 )
 animation = "durmiendo"
 
 [node name="AnimatedSpriteEspuma" type="AnimatedSprite" parent="."]
+position = Vector2( 15, -6 )
 scale = Vector2( 8, 8 )
 frames = SubResource( 4 )
 animation = "espuma_2"

@@ -23,6 +23,8 @@ func pingu_llego_a_la_cama():
 func pingu_termino_de_acostarse():
 	pingu_acostado = true
 	
+	print("Pingu está acostado en la cama")
+	
 	if not lampara.encendida and Necesidades.energia < 100:
 		var pingu = get_tree().current_scene.get_node("Pingu")
 		pingu.dormirse()
@@ -33,6 +35,9 @@ func pingu_termino_de_acostarse():
 func pingu_termino_de_despertar():
 	pingu_durmiendo = false
 	Necesidades.pingu_durmiendo = false
+	
+	var pingu = get_tree().current_scene.get_node("Pingu")
+	pingu.puede_arrastrarse = true
 	
 	print("Pingu terminó de despertar. Sigue acostado: ", pingu_acostado)
 

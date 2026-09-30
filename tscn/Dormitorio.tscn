@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets Definitivos/Botones y labels/Habitaciones-1.png.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 156, 105 )
+extents = Vector2( 253, 190 )
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 59.0
@@ -27,7 +27,7 @@ texture = ExtResource( 4 )
 expand = true
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 566, 212 )
+position = Vector2( 608, 284 )
 scale = Vector2( 7.80714, 7.65714 )
 texture = ExtResource( 7 )
 
@@ -41,11 +41,16 @@ position = Vector2( 764, 1006 )
 scale = Vector2( 0.420288, 0.502258 )
 texture = ExtResource( 6 )
 
-[node name="Area2D" type="Area2D" parent="Cama"]
+[node name="AreaCama" type="Area2D" parent="Cama"]
+collision_layer = 8
+collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cama/Area2D"]
-position = Vector2( 20, 39 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cama/AreaCama"]
+position = Vector2( 58, -46 )
 shape = SubResource( 2 )
+
+[node name="PosicionPinguCama" type="Position2D" parent="Cama"]
+position = Vector2( 8, -26 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 169, 969 )
