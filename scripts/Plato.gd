@@ -19,12 +19,12 @@ func configurar_pingu(pingu_referencia):
 
 
 var texturas_alimentos = {
-	"pescado": preload("res://assets/Comidas/ChatGPT Image 12 sept 2026, 10_59_41 p.m..png"),
-	"completo": preload("res://assets/Comidas/completo.jpeg"),
-	"dona": preload("res://assets/Comidas/Dona.jpeg"),
-	"pizza": preload("res://assets/Comidas/pizza.jpeg"),
-	"torta": preload("res://assets/Comidas/RedVelvet.jpeg"),
-	"sushi": preload("res://assets/Comidas/RedVelvet.jpeg"),
+	"pescado": preload("res://Assets Definitivos/Pescado.png"),
+	"completo": preload("res://Assets Definitivos/Completo.png"),
+	"dona": preload("res://Assets Definitivos/Dona.png"),
+	"pizza": preload("res://Assets Definitivos/Pizza.png"),
+	"torta": preload("res://Assets Definitivos/Torta.png"),
+	"sushi": preload("res://Assets Definitivos/Sushi.png"),
 }
 
 

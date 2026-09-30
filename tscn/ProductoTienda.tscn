@@ -1,13 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/ProductoTienda.gd" type="Script" id=1]
+[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-3.png(2).png" type="Texture" id=2]
 
 [node name="ProductoTienda" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 48.0
 margin_top = 747.0
-margin_right = -132.0
+margin_right = -61.0
 margin_bottom = -993.0
 script = ExtResource( 1 )
 
@@ -18,24 +19,27 @@ margin_right = 164.0
 margin_bottom = 152.0
 
 [node name="Nombre" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 229.0
 margin_top = 42.0
 margin_right = 289.0
 margin_bottom = 74.0
 rect_scale = Vector2( 3, 3 )
-text = "Pescado"
+text = "Nombre"
 
 [node name="Precio" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 587.0
 margin_top = 47.0
 margin_right = 617.0
 margin_bottom = 74.0
 rect_scale = Vector2( 3, 3 )
-text = "10"
+text = "Precio"
 
-[node name="BotonComprar" type="Button" parent="."]
-margin_left = 703.0
-margin_top = 40.0
-margin_right = 881.0
-margin_bottom = 141.0
-text = "Comprar"
+[node name="BotonComprar" type="TextureButton" parent="."]
+margin_left = 705.0
+margin_top = -43.0
+margin_right = 753.0
+margin_bottom = 5.0
+rect_scale = Vector2( 6, 6 )
+texture_normal = ExtResource( 2 )

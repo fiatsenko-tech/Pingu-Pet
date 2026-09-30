@@ -5,6 +5,7 @@ var habitacion_actual_nodo = null
 var pingu_llego_al_destino = false
 var pingu_en_cama = false
 
+
 var habitaciones = [
 	"res://tscn/Comedor.tscn",
 	"res://tscn/Bano.tscn",
@@ -24,7 +25,6 @@ func _ready():
 	boton_derecho.connect("pressed", self, "_on_BotonDerecho_pressed")
 	boton_tienda.connect("pressed", self, "_on_BotonTienda_pressed")
 	
-	pingu.connect("llego_al_destino", self, "_on_Pingu_llego_al_destino")
 	pingu.connect("termino_de_acostarse", self, "_on_Pingu_termino_de_acostarse")
 	pingu.connect("termino_de_despertar", self, "_on_Pingu_termino_de_despertar")
 	
@@ -34,7 +34,6 @@ func _ready():
 	Dinero.connect("monedas_cambiaron", self, "_on_monedas_cambiaron")
 	
 	cargar_habitacion()
-	pingu.global_position = pingu.posicion_destino
 
 	print("Hambre: ", Necesidades.hambre)
 	print("Higiene: ", Necesidades.higiene)
@@ -58,7 +57,8 @@ func cargar_habitacion():
 	var posicion_pingu = habitacion.get_node("PosicionPingu")
 	
 	pingu.posicion_destino = posicion_pingu.global_position
-	pingu_llego_al_destino = false
+	pingu.global_position = posicion_pingu.global_position
+	pingu.habitacion_actual = habitacion_actual
 
 	if habitacion.has_node("Plato"):
 		var plato = habitacion.get_node("Plato")
@@ -67,23 +67,15 @@ func cargar_habitacion():
 	boton_izquierdo.raise()
 	boton_derecho.raise()
 
-
 func _on_BotonIzquierdo_pressed():
 	if habitacion_actual > 0:
 		habitacion_actual -= 1
 		cargar_habitacion()
-		pingu.entrar_desde_derecha()
-
 
 func _on_BotonDerecho_pressed():
 	if habitacion_actual < habitaciones.size() - 1:
 		habitacion_actual += 1
 		cargar_habitacion()
-		pingu.entrar_desde_izquierda()
-
-func _on_Pingu_llego_al_destino():
-	if habitacion_actual == 2:
-		habitacion_actual_nodo.pingu_llego_a_la_cama()
 
 func _on_Pingu_termino_de_acostarse():
 	if habitacion_actual == 2:

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ChatGPT Image 25 sept 2026, 06_05_30 p.m..png-31e9fcc5869bfdbffcccfd7939489e29.stex"
+path="res://.import/Habitaciones-2.png.png-f94950dde790ad801fd0f59f32774bc1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets Definitivos/comedor/ChatGPT Image 25 sept 2026, 06_05_30 p.m..png"
-dest_files=[ "res://.import/ChatGPT Image 25 sept 2026, 06_05_30 p.m..png-31e9fcc5869bfdbffcccfd7939489e29.stex" ]
+source_file="res://Assets Definitivos/Botones y labels/Habitaciones-2.png.png"
+dest_files=[ "res://.import/Habitaciones-2.png.png-f94950dde790ad801fd0f59f32774bc1.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
