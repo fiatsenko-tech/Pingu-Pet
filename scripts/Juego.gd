@@ -19,11 +19,13 @@ onready var boton_izquierdo = $UI/BotonIzquierdo
 onready var boton_derecho = $UI/BotonDerecho
 onready var label_monedas = $UI/LabelMonedas
 onready var boton_tienda = $UI/BotonTienda
+onready var boton_dinero = $UI/BotonDinero
 
 func _ready():
 	boton_izquierdo.connect("pressed", self, "_on_BotonIzquierdo_pressed")
 	boton_derecho.connect("pressed", self, "_on_BotonDerecho_pressed")
 	boton_tienda.connect("pressed", self, "_on_BotonTienda_pressed")
+	boton_dinero.connect("pressed", self, "_on_BotonDinero_pressed")
 	
 	pingu.connect("termino_de_acostarse", self, "_on_Pingu_termino_de_acostarse")
 	pingu.connect("termino_de_despertar", self, "_on_Pingu_termino_de_despertar")
@@ -95,3 +97,8 @@ func _on_BotonTienda_pressed():
 	var escena_tienda = load("res://tscn/Tienda.tscn")
 	var tienda = escena_tienda.instance()
 	add_child(tienda)
+
+func _on_BotonDinero_pressed():
+	var escena_pension = load("res://tscn/Pension.tscn")
+	var pension = escena_pension.instance()
+	add_child(pension)
