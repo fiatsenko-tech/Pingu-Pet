@@ -32,11 +32,9 @@ func _ready():
 	boton_completo.connect("pressed", self, "_on_BotonCompleto_pressed")
 	boton_torta.connect("pressed", self, "_on_BotonTorta_pressed")
 
-
 func configurar(plato_recibido):
 	plato = plato_recibido
 	actualizar_inventario()
-
 
 func actualizar_inventario():
 	var cantidad_pescado = Inventario.food["pescado"]
@@ -63,7 +61,6 @@ func actualizar_inventario():
 	label_completo.text = "x " + str(cantidad_completo)
 	boton_completo.disabled = cantidad_completo <= 0
 
-
 func _on_BotonPescado_pressed():
 	if Inventario.food["pescado"] <= 0:
 		return
@@ -72,7 +69,6 @@ func _on_BotonPescado_pressed():
 	plato.agregar_alimento("pescado")
 
 	actualizar_inventario()
-
 
 func _on_BotonDona_pressed():
 	if Inventario.food["dona"] <= 0:
@@ -83,7 +79,6 @@ func _on_BotonDona_pressed():
 
 	actualizar_inventario()
 
-
 func _on_BotonPizza_pressed():
 	if Inventario.food["pizza"] <= 0:
 		return
@@ -92,7 +87,6 @@ func _on_BotonPizza_pressed():
 	plato.agregar_alimento("pizza")
 
 	actualizar_inventario()
-
 
 func _on_BotonSushi_pressed():
 	if Inventario.food["sushi"] <= 0:
@@ -103,7 +97,6 @@ func _on_BotonSushi_pressed():
 
 	actualizar_inventario()
 
-
 func _on_BotonTorta_pressed():
 	if Inventario.food["torta"] <= 0:
 		return
@@ -113,7 +106,6 @@ func _on_BotonTorta_pressed():
 
 	actualizar_inventario()
 
-
 func _on_BotonCompleto_pressed():
 	if Inventario.food["completo"] <= 0:
 		return
@@ -122,7 +114,6 @@ func _on_BotonCompleto_pressed():
 	plato.agregar_alimento("completo")
 
 	actualizar_inventario()
-
 
 func _on_BotonCerrar_pressed():
 	queue_free()

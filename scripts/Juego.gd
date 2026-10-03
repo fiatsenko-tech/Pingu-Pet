@@ -5,14 +5,12 @@ var habitacion_actual_nodo = null
 var pingu_llego_al_destino = false
 var pingu_en_cama = false
 
-
 var habitaciones = [
 	"res://tscn/Comedor.tscn",
 	"res://tscn/Bano.tscn",
 	"res://tscn/Dormitorio.tscn",
-	"res://tscn/Patio.tscn"
-]
-
+	"res://tscn/Patio.tscn"]
+	
 onready var contenedor = $HabitacionActual
 onready var pingu = $Pingu
 onready var boton_izquierdo = $UI/BotonIzquierdo
@@ -64,6 +62,11 @@ func cargar_habitacion():
 	
 	if habitacion_actual != 2:
 		pingu.salir_de_la_cama()
+
+	if habitacion_actual == 1:
+		pingu.mostrar_espuma()
+	else:
+		pingu.ocultar_espuma()
 
 	if habitacion.has_node("Plato"):
 		var plato = habitacion.get_node("Plato")

@@ -49,13 +49,13 @@ func _process(delta):
 		if distancia_jabon >= distancia_por_nivel:
 			distancia_jabon -= distancia_por_nivel
 
-			if pingu == null:
-				return
+		if pingu == null:
+			return
 
-			if pingu.nivel_espuma < 4:
-				pingu.nivel_espuma += 1
+		if pingu.nivel_espuma < 4:
+			pingu.nivel_espuma += 1
 
-				actualizar_espuma()
+			actualizar_espuma()
 
 func actualizar_espuma():
 	if pingu == null:

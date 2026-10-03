@@ -5,6 +5,7 @@ const RUTA_GUARDADO = "user://save_data.json"
 var tiempo_anterior = 0
 var segundos_acumulados = 0
 var segundos_desde_guardado = 0
+var ultimo_claim = 0
 
 func _ready():
 	tiempo_anterior = OS.get_unix_time()
@@ -25,6 +26,9 @@ func cargar_dinero():
 	if economia.has("monedas"):
 		Dinero.monedas = int(economia["monedas"])
 		print("Monedas cargadas: ", Dinero.monedas)
+	
+	if economia.has("ultimo_claim"):
+		ultimo_claim = int(economia["ultimo_claim"])
 
 func _process(delta):
 	actualizar()
@@ -101,7 +105,8 @@ func guardar_estado():
 		"completo": Inventario.food["completo"]}
 		
 	datos ["economia"] = {
-		"monedas": Dinero.monedas}
+		"monedas": Dinero.monedas,
+		"ultimo_claim": ultimo_claim}
 
 	var archivo = File.new()
 	var error = archivo.open(RUTA_GUARDADO, File.WRITE)

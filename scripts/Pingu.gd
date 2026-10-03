@@ -119,11 +119,21 @@ func mostrar_mensaje(texto):
 
 func actualizar_espuma(nivel):
 	match nivel:
-		0: animated_sprite_espuma.play("sin_espuma")
-		1: animated_sprite_espuma.play("espuma_1")
-		2: animated_sprite_espuma.play("espuma_2")
-		3: animated_sprite_espuma.play("espuma_3")
-		4: animated_sprite_espuma.play("espuma_4")
+		0:
+			animated_sprite_espuma.play("sin_espuma")
+			animated_sprite_espuma.hide()
+		1:
+			animated_sprite_espuma.play("espuma_1")
+			animated_sprite_espuma.show()
+		2:
+			animated_sprite_espuma.play("espuma_2")
+			animated_sprite_espuma.show()
+		3:
+			animated_sprite_espuma.play("espuma_3")
+			animated_sprite_espuma.show()
+		4:
+			animated_sprite_espuma.play("espuma_4")
+			animated_sprite_espuma.show()
 
 func acostarse():
 	animated_sprite.play("acostarse")
@@ -137,3 +147,10 @@ func despertar():
 func salir_de_la_cama():
 	puede_arrastrarse = true
 	animated_sprite.play("idle")
+
+func ocultar_espuma():
+	animated_sprite_espuma.hide()
+
+func mostrar_espuma():
+	if nivel_espuma > 0:
+		animated_sprite_espuma.show()

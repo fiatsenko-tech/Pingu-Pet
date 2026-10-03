@@ -1,21 +1,20 @@
-extends Node2D
+extends TextureButton
 
 var panel_refrigerador = null
 
-onready var zona_comida = $ZonaComida
 onready var plato = get_node("../Plato")
 
 func _ready():
-	zona_comida.connect("input_event", self, "_on_ZonaComida_input_event")
+	print("PLATO: ", plato)
 
-func _on_ZonaComida_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed:
-			abrir()
+func _on_Refrigerador_pressed():
+	abrir()
 
 func abrir():
-	if panel_refrigerador != null:
+	if panel_refrigerador != null and is_instance_valid(panel_refrigerador):
 		return
+	
+	panel_refrigerador = null
 	
 	var escena_panel = load("res://tscn/PanelRefrigerador.tscn")
 	panel_refrigerador = escena_panel.instance()

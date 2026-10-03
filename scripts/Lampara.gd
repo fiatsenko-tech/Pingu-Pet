@@ -1,13 +1,11 @@
-extends Node2D
+extends TextureButton
 
 signal estado_cambiado
 
 var encendida = true
 
-func _on_Area2D_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.pressed and event.button_index == BUTTON_LEFT:
-			encendida = !encendida
-			
-			print ("Lampara encendida: ", encendida)
-			emit_signal("estado_cambiado")
+func _on_Lampara_pressed():
+	encendida = !encendida
+	
+	print("Lampara encendida: ", encendida)
+	emit_signal("estado_cambiado")
