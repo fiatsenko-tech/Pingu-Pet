@@ -8,8 +8,7 @@ var pingu_en_cama = false
 var habitaciones = [
 	"res://tscn/Comedor.tscn",
 	"res://tscn/Bano.tscn",
-	"res://tscn/Dormitorio.tscn",
-	"res://tscn/Patio.tscn"]
+	"res://tscn/Dormitorio.tscn"]
 	
 onready var contenedor = $HabitacionActual
 onready var pingu = $Pingu

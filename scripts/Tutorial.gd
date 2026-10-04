@@ -10,7 +10,8 @@ func _ready():
 	boton_ok.connect("pressed", self, "_on_BotonOK_pressed")
 
 	texto_tutorial.text = "Este juego lo hice para ti.\n\n" \
-		+ "Es básicamente como jugar Pou, pero con Pingu. 🐧\n\n" \
+		+ "Es básicamente como jugar Pou,  🐧\n\n" \
+		+ "pero con Pingu. \n\n" \
 		+ "Espero que te guste <3"
 
 

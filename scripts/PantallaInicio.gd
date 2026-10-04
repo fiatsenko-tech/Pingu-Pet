@@ -80,7 +80,9 @@ func mostrar_bienvenida(nombre: String, ya_existia: bool):
 		texto_mensaje.text = "WelcomeS back, " + nombre + "!\n\nPingu missed you. 🐧"
 	else:
 		texto_mensaje.text = "Welcome, " + nombre + "!\n\n" \
+			+ "\n\n" \
 			+ "I made this little world especially for you.\n\n" \
+			+ "\n\n" \
 			+ "Take good care of Pingu!\n\n" \
 			+ "Noot Noot! 🐧"
 

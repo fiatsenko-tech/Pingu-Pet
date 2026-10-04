@@ -22,7 +22,7 @@ var texturas_alimentos = {
 	"pescado": preload("res://Assets Definitivos/Pescado.png"),
 	"completo": preload("res://Assets Definitivos/Completo.png"),
 	"dona": preload("res://Assets Definitivos/Dona.png"),
-	"pizza": preload("res://Assets Definitivos/Pizza.png"),
+	"pizza": preload("res://Assets Definitivos/comida/New Piskel-1.png(7).png"),
 	"torta": preload("res://Assets Definitivos/Torta.png"),
 	"sushi": preload("res://Assets Definitivos/Sushi.png"),
 }
