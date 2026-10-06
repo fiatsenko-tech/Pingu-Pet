@@ -23,6 +23,8 @@ func cargar_productos():
 		
 		lista_productos.add_child(nuevo_producto)
 		
+		print("Producto creado: ", producto["nombre"])
+		
 		nuevo_producto.configurar_producto(
 			producto["nombre"],
 			producto["precio"],

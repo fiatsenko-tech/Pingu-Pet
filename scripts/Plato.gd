@@ -19,19 +19,18 @@ func configurar_pingu(pingu_referencia):
 
 
 var texturas_alimentos = {
-	"pescado": preload("res://Assets Definitivos/Pescado.png"),
-	"completo": preload("res://Assets Definitivos/Completo.png"),
-	"dona": preload("res://Assets Definitivos/Dona.png"),
+	"pescado": preload("res://Assets Definitivos/comida/New Piskel-1.png(5).png"),
+	"completo": preload("res://Assets Definitivos/comida/New Piskel-1.png(2).png"),
+	"dona": preload("res://Assets Definitivos/comida/New Piskel-1.png(1).png"),
 	"pizza": preload("res://Assets Definitivos/comida/New Piskel-1.png(7).png"),
-	"torta": preload("res://Assets Definitivos/Torta.png"),
-	"sushi": preload("res://Assets Definitivos/Sushi.png"),
-}
-
+	"torta": preload("res://Assets Definitivos/comida/New Piskel-1.png.png"),
+	"sushi": preload("res://Assets Definitivos/comida/New Piskel-1.png(3).png"),}
 
 onready var imagen_alimento = $TextureButtonAlimento
 onready var label = $Label
 onready var boton_izquierdo = $BotonIzquierda
 onready var boton_derecho = $BotonDerecha
+
 
 
 func _ready():
@@ -44,6 +43,14 @@ func _ready():
 	boton_izquierdo.connect("pressed", self, "_on_BotonIzquierda_pressed")
 	imagen_alimento.connect("gui_input", self, "_on_ImagenAlimento_gui_input")
 
+func cargar_estado():
+	alimentos_en_plato = Tiempo.alimentos_en_plato.duplicate()
+	alimento_actual = Tiempo.alimento_actual
+
+	if alimento_actual != "" and alimentos_en_plato.has(alimento_actual):
+		indice_actual = 0
+
+	actualizar_visual()
 
 func agregar_alimento(nombre_alimento):
 	if not texturas_alimentos.has(nombre_alimento):
@@ -58,8 +65,10 @@ func agregar_alimento(nombre_alimento):
 		alimento_actual = nombre_alimento
 		indice_actual = 0
 
-	actualizar_visual()
+	Tiempo.alimentos_en_plato = alimentos_en_plato.duplicate()
+	Tiempo.alimento_actual = alimento_actual
 
+	actualizar_visual()
 
 func actualizar_visual():
 	if alimento_actual == "":
@@ -91,7 +100,6 @@ func actualizar_visual():
 
 	actualizar_botones()
 
-
 func actualizar_botones():
 	if alimentos_en_plato.size() > 1:
 		boton_izquierdo.show()
@@ -99,7 +107,6 @@ func actualizar_botones():
 	else:
 		boton_izquierdo.hide()
 		boton_derecho.hide()
-
 
 func _on_BotonIzquierda_pressed():
 	if alimentos_en_plato.size() <= 1:
@@ -113,9 +120,9 @@ func _on_BotonIzquierda_pressed():
 		indice_actual = alimentos.size() - 1
 
 	alimento_actual = alimentos[indice_actual]
-
+	Tiempo.alimento_actual = alimento_actual
+	
 	actualizar_visual()
-
 
 func _on_BotonDerecha_pressed():
 	if alimentos_en_plato.size() <= 1:
@@ -129,9 +136,9 @@ func _on_BotonDerecha_pressed():
 		indice_actual = 0
 
 	alimento_actual = alimentos[indice_actual]
-
+	Tiempo.alimento_actual = alimento_actual
+	
 	actualizar_visual()
-
 
 func _on_ImagenAlimento_gui_input(event):
 	if event is InputEventMouseButton:
@@ -155,11 +162,9 @@ func _on_ImagenAlimento_gui_input(event):
 
 				imagen_alimento.rect_global_position = posicion_original
 
-
 func _process(delta):
 	if arrastrando:
 		imagen_alimento.rect_global_position = get_global_mouse_position() + offset_arrastre
-
 
 func comida_dentro_de_pingu():
 	if collision_area_pingu == null:
@@ -188,12 +193,15 @@ func comer_alimento():
 	if alimentos_en_plato[alimento_actual] <= 0:
 		alimentos_en_plato.erase(alimento_actual)
 
-		if alimentos_en_plato.size() > 0:
-			var alimentos = alimentos_en_plato.keys()
-			indice_actual = 0
-			alimento_actual = alimentos[0]
-		else:
-			alimento_actual = ""
-			indice_actual = 0
+	if alimentos_en_plato.size() > 0:
+		var alimentos = alimentos_en_plato.keys()
+		indice_actual = 0
+		alimento_actual = alimentos[0]
+	else:
+		alimento_actual = ""
+		indice_actual = 0
+
+	Tiempo.alimentos_en_plato = alimentos_en_plato.duplicate()
+	Tiempo.alimento_actual = alimento_actual
 
 	actualizar_visual()

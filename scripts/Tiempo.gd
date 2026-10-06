@@ -7,9 +7,16 @@ var segundos_acumulados = 0
 var segundos_desde_guardado = 0
 var ultimo_claim = 0
 
+var alimentos_en_plato = {}
+var alimento_actual = ""
+
+var ultima_habitacion = 2
+
 func _ready():
 	tiempo_anterior = OS.get_unix_time()
 	cargar_dinero()
+	cargar_plato()
+	cargar_habitacion()
 	aplicar_tiempo_offline()
 
 func cargar_dinero():
@@ -108,6 +115,12 @@ func guardar_estado():
 		"monedas": Dinero.monedas,
 		"ultimo_claim": ultimo_claim}
 
+	datos["plato"] = {
+	"alimentos_en_plato": alimentos_en_plato,
+	"alimento_actual": alimento_actual}
+	
+	datos["habitacion_actual"] = ultima_habitacion
+	
 	var archivo = File.new()
 	var error = archivo.open(RUTA_GUARDADO, File.WRITE)
 
@@ -142,3 +155,29 @@ func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		guardar_estado()
 		get_tree().quit()
+
+func cargar_plato():
+	var datos = cargar_datos()
+
+	if datos.empty():
+		return
+
+	if not datos.has("plato"):
+		return
+
+	var plato = datos["plato"]
+
+	if plato.has("alimentos_en_plato"):
+		alimentos_en_plato = plato["alimentos_en_plato"]
+
+	if plato.has("alimento_actual"):
+		alimento_actual = plato["alimento_actual"]
+
+func cargar_habitacion():
+	var datos = cargar_datos()
+
+	if datos.empty():
+		return
+
+	if datos.has("habitacion_actual"):
+		ultima_habitacion = int(datos["habitacion_actual"])

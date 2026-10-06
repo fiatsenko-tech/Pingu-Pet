@@ -1,24 +1,48 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scripts/Pingu.gd" type="Script" id=1]
-[ext_resource path="res://assets/Pingu Caminando/lado-5.png(1).png" type="Texture" id=2]
 [ext_resource path="res://assets/Pingu Idle/New Piskel-4.png.png" type="Texture" id=3]
-[ext_resource path="res://assets/Pingu Caminando/lado-2.png(1).png" type="Texture" id=4]
 [ext_resource path="res://assets/Pingu Idle/New Piskel-1.png.png" type="Texture" id=5]
-[ext_resource path="res://assets/Pingu Caminando/lado-4.png(1).png" type="Texture" id=6]
-[ext_resource path="res://assets/Pingu Idle/New Piskel-3.png.png" type="Texture" id=7]
-[ext_resource path="res://assets/Pingu Caminando/lado-1.png(1).png" type="Texture" id=8]
-[ext_resource path="res://assets/Pingu Idle/New Piskel-2.png.png" type="Texture" id=9]
+[ext_resource path="res://Assets Definitivos/PinguEstados/New Piskel-3.png(4).png" type="Texture" id=7]
 [ext_resource path="res://Assets Definitivos/Baño/New Piskel-5.png.png" type="Texture" id=10]
 [ext_resource path="res://Assets Definitivos/Baño/New Piskel-3.png(1).png" type="Texture" id=11]
 [ext_resource path="res://Assets Definitivos/Baño/New Piskel-2.png(1).png" type="Texture" id=12]
 [ext_resource path="res://Assets Definitivos/Baño/New Piskel-4.png(1).png" type="Texture" id=13]
 [ext_resource path="res://Assets Definitivos/Baño/New Piskel-1.png(2).png" type="Texture" id=14]
+[ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Assets Definitivos/comedor/New Piskel-2.png(6).png" type="Texture" id=16]
+[ext_resource path="res://Assets Definitivos/comedor/New Piskel-3.png(5).png" type="Texture" id=17]
+[ext_resource path="res://Assets Definitivos/PinguEstados/New Piskel-5.png(2).png" type="Texture" id=18]
+[ext_resource path="res://Assets Definitivos/PinguEstados/New Piskel-2.png(5).png" type="Texture" id=19]
+[ext_resource path="res://Assets Definitivos/PinguEstados/New Piskel-3.png(3).png" type="Texture" id=20]
+[ext_resource path="res://Assets Definitivos/PinguEstados/New Piskel-1.png(8).png" type="Texture" id=21]
+[ext_resource path="res://Assets Definitivos/PinguEstados/New Piskel-4.png(5).png" type="Texture" id=22]
+[ext_resource path="res://Assets Definitivos/PinguEstados/Pingu-2.png-1.png.png" type="Texture" id=23]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 7 ) ],
 "loop": false,
+"name": "Pingu Aburrido",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": false,
+"name": "Pingu Cansado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": false,
+"name": "Pingu Hambreado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 19 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "Pingu Sucio",
+"speed": 3.0
+}, {
+"frames": [  ],
+"loop": true,
 "name": "abrir_ojos",
 "speed": 5.0
 }, {
@@ -27,30 +51,35 @@ animations = [ {
 "name": "acostado",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 2 ) ],
+"frames": [  ],
 "loop": true,
-"name": "caminar",
-"speed": 3.0
+"name": "acostarse",
+"speed": 5.0
 }, {
 "frames": [  ],
-"loop": false,
+"loop": true,
 "name": "cerrar_ojos",
 "speed": 5.0
 }, {
-"frames": [  ],
-"loop": false,
+"frames": [ ExtResource( 17 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 16 ) ],
+"loop": true,
 "name": "comer",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [  ],
 "loop": true,
 "name": "durmiendo",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 3 ) ],
 "loop": false,
 "name": "idle",
-"speed": 1.5
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": false,
+"name": "siendo_arrastrado",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
@@ -82,25 +111,31 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 117.75, 134.75 )
+extents = Vector2( 102.5, 37 )
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 500.5, 228 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 34
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 15 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 180, 245.5 )
 
 [node name="Pingu" type="Node2D"]
 position = Vector2( 374, 1100 )
+scale = Vector2( 1.13, 1.13 )
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 8, 8 )
-frames = SubResource( 3 )
-animation = "durmiendo"
+frames = SubResource( 7 )
+animation = "idle"
 
 [node name="AnimatedSpriteEspuma" type="AnimatedSprite" parent="."]
-position = Vector2( 15, -6 )
 scale = Vector2( 8, 8 )
 frames = SubResource( 4 )
 animation = "espuma_2"
@@ -108,9 +143,11 @@ animation = "espuma_2"
 [node name="AreaComida" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaComida"]
+position = Vector2( -29.5, -100 )
 shape = SubResource( 1 )
 
 [node name="AreaArrastre" type="Area2D" parent="."]
+visible = false
 collision_layer = 8
 collision_mask = 8
 
@@ -119,16 +156,26 @@ position = Vector2( -367.5, -7 )
 shape = SubResource( 5 )
 
 [node name="Mensaje" type="Label" parent="."]
-margin_left = -130.0
-margin_top = -304.0
-margin_right = 62.0
-margin_bottom = -248.0
-rect_scale = Vector2( 1.4, 1.4 )
+margin_left = -142.0
+margin_top = -325.0
+margin_right = 50.0
+margin_bottom = -269.0
+custom_fonts/font = SubResource( 6 )
 
 [node name="AreaBano" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBano"]
 position = Vector2( -1, -19.5 )
 shape = SubResource( 2 )
+
+[node name="TextureButtonArrastre" type="TextureButton" parent="."]
+margin_left = -211.0
+margin_top = -229.0
+margin_right = 126.0
+margin_bottom = 235.0
+
+[connection signal="gui_input" from="TextureButtonArrastre" to="." method="_on_TextureButtonArrastre_gui_input"]
+[connection signal="pressed" from="TextureButtonArrastre" to="." method="_on_TextureButtonArrastre_pressed"]

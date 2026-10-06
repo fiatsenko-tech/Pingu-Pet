@@ -1,14 +1,36 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-5.png(1)-1.png(1).png" type="Texture" id=2]
 [ext_resource path="res://scripts/Pension.gd" type="Script" id=3]
 [ext_resource path="res://Assets Definitivos/Botones y labels/pixil-frame-0(1).png" type="Texture" id=4]
 [ext_resource path="res://Assets Definitivos/Botones y labels/pixil-frame-0(2).png" type="Texture" id=5]
+[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-5.png(1)-1.png(1)-1.png.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.298039, 0.654902, 0.866667, 0.627451 )
 
 [sub_resource type="DynamicFont" id=1]
 size = 85
 outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 70
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 51
+outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
@@ -18,22 +40,23 @@ script = ExtResource( 3 )
 [node name="PanelPension" type="Panel" parent="."]
 margin_right = 1080.0
 margin_bottom = 1920.0
+custom_styles/panel = SubResource( 2 )
 
 [node name="Label" type="Label" parent="PanelPension"]
-margin_left = 193.0
-margin_top = 219.0
-margin_right = 841.0
-margin_bottom = 408.0
+margin_left = 92.0
+margin_top = 399.0
+margin_right = 994.0
+margin_bottom = 588.0
 custom_fonts/font = SubResource( 1 )
-text = "Child support 
-for our son."
+text = "Child support for 
+our son (500 Coins)"
 
 [node name="TextureButton" type="TextureButton" parent="PanelPension"]
-margin_left = 433.0
+margin_left = 317.0
 margin_top = 1151.0
-margin_right = 468.0
+margin_right = 352.0
 margin_bottom = 1166.0
-rect_scale = Vector2( 9, 9 )
+rect_scale = Vector2( 12, 12 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
 
@@ -44,3 +67,30 @@ margin_right = 905.0
 margin_bottom = 39.0
 rect_scale = Vector2( 11, 11 )
 texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 6 )
+
+[node name="LabelTiempo" type="Label" parent="PanelPension"]
+margin_left = 122.0
+margin_top = 1042.0
+margin_right = 1040.0
+margin_bottom = 1109.0
+custom_fonts/font = SubResource( 3 )
+text = "2  días, 6 horas, 50 minutos"
+
+[node name="LabelDisponible" type="Label" parent="PanelPension"]
+margin_left = 237.0
+margin_top = 948.0
+margin_right = 875.0
+margin_bottom = 1105.0
+custom_fonts/font = SubResource( 4 )
+text = "You can claim 
+child support :))"
+
+[node name="Label2" type="Label" parent="PanelPension"]
+margin_left = 105.0
+margin_top = 621.0
+margin_right = 912.0
+margin_bottom = 744.0
+custom_fonts/font = SubResource( 5 )
+text = "Use the money to buy food,
+ not beer."

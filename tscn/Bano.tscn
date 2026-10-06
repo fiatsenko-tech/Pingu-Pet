@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/fondos/ChatGPT Image 20 sept 2026, 07_50_09 p.m..png" type="Texture" id=1]
-[ext_resource path="res://Assets Definitivos/Baño/ChatGPT Image 24 sept 2026, 10_33_19 p.m..png" type="Texture" id=2]
+[ext_resource path="res://Assets Definitivos/Baño/Barra de jabón pixelada sobre fondo transparente.png" type="Texture" id=2]
 [ext_resource path="res://Assets Definitivos/Baño/Ducha-1.png(1).png" type="Texture" id=3]
 [ext_resource path="res://scripts/Jabon.gd" type="Script" id=4]
 [ext_resource path="res://scripts/Bano.gd" type="Script" id=5]
@@ -9,12 +9,12 @@
 [ext_resource path="res://Assets Definitivos/Botones y labels/Habitaciones-3.png.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 127.125, 86.25 )
+extents = Vector2( 108, 89.125 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [  ],
-"loop": false,
+"loop": true,
 "name": "agua",
 "speed": 5.0
 }, {
@@ -47,15 +47,15 @@ scale = Vector2( 6.53572, 7.33571 )
 texture = ExtResource( 7 )
 
 [node name="PosicionPingu" type="Position2D" parent="."]
-position = Vector2( 560, 1100 )
+position = Vector2( 550, 1070 )
 
 [node name="Jabon" type="Node2D" parent="."]
 position = Vector2( 234, 1400 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Jabon"]
-position = Vector2( -7.50784, 2.99994 )
-scale = Vector2( 0.190603, 0.1563 )
+position = Vector2( -7.00006, -16 )
+scale = Vector2( 0.234762, 0.241966 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="Jabon"]
@@ -63,7 +63,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jabon/Area2D"]
-position = Vector2( -11.125, -1 )
+position = Vector2( -4, -3.875 )
 shape = SubResource( 1 )
 
 [node name="Ducha" type="Node2D" parent="."]

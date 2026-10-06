@@ -1,51 +1,95 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/PantallaInicio.gd" type="Script" id=1]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-4.png(3).png" type="Texture" id=2]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-1.png(5).png" type="Texture" id=3]
+[ext_resource path="res://Assets Definitivos/Botones y labels/BotonesNuevos/pixil-frame-0(5).png" type="Texture" id=2]
+[ext_resource path="res://Assets Definitivos/Botones y labels/BotonesNuevos/pixil-frame-0(4).png" type="Texture" id=3]
+[ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets Definitivos/Botones y labels/BotonesNuevos/pixil-frame-0(3).png" type="Texture" id=5]
+[ext_resource path="res://Assets Definitivos/Botones y labels/BotonesNuevos/pixil-frame-0(2).png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 7
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 67
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
 
 [node name="PantallaInicio" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_right = 1080.0
+margin_bottom = 1920.0
+
 [node name="Titulo" type="Label" parent="."]
-margin_left = 258.0
-margin_top = 435.0
-margin_right = 405.0
-margin_bottom = 449.0
-rect_scale = Vector2( 4, 4 )
+visible = false
+margin_left = 138.0
+margin_top = 563.0
+margin_right = 927.0
+margin_bottom = 634.0
+custom_fonts/font = SubResource( 1 )
 text = "Welcome to Pingu Pet!"
 
 [node name="CampoNombre" type="LineEdit" parent="."]
-margin_left = 360.0
-margin_top = 823.0
-margin_right = 718.0
-margin_bottom = 899.0
+visible = false
+margin_left = 190.0
+margin_top = 961.0
+margin_right = 872.0
+margin_bottom = 1113.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+placeholder_text = "Please enter your name!"
+placeholder_alpha = 1.0
 
 [node name="BotonComenzar" type="TextureButton" parent="."]
-margin_left = 302.0
-margin_top = 1035.0
-margin_right = 350.0
-margin_bottom = 1083.0
+margin_left = 322.0
+margin_top = 1149.0
+margin_right = 357.0
+margin_bottom = 1164.0
 rect_scale = Vector2( 9, 9 )
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
 
 [node name="PanelMensaje" type="Panel" parent="."]
-margin_left = 525.0
-margin_top = 1386.0
-margin_right = 561.0
-margin_bottom = 1412.0
+visible = false
+margin_left = 69.0
+margin_top = 176.0
+margin_right = 103.0
+margin_bottom = 179.0
 
 [node name="TextoMensaje" type="Label" parent="PanelMensaje"]
 margin_left = -1.0
-margin_top = 8.0
-margin_right = 120.0
-margin_bottom = 70.0
+margin_top = 288.0
+margin_right = 913.0
+margin_bottom = 824.0
+custom_fonts/font = SubResource( 3 )
+text = "Welcome, Aki !
+
+I made this little world
+ especially for you.
+
+Take good care of Pingu!
+Noot Noot!"
 
 [node name="BotonEntrar" type="TextureButton" parent="PanelMensaje"]
-margin_top = 84.0
-margin_right = 48.0
-margin_bottom = 132.0
+margin_left = 306.0
+margin_top = 1028.0
+margin_right = 341.0
+margin_bottom = 1043.0
 rect_scale = Vector2( 9, 9 )
-texture_normal = ExtResource( 2 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )

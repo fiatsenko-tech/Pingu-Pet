@@ -32,6 +32,7 @@ func _ready():
 	actualizar_monedas()
 	Dinero.connect("monedas_cambiaron", self, "_on_monedas_cambiaron")
 	
+	habitacion_actual = Tiempo.ultima_habitacion
 	cargar_habitacion()
 
 	print("Hambre: ", Necesidades.hambre)
@@ -58,6 +59,12 @@ func cargar_habitacion():
 	pingu.posicion_destino = posicion_pingu.global_position
 	pingu.global_position = posicion_pingu.global_position
 	pingu.habitacion_actual = habitacion_actual
+	var boton_arrastre = pingu.get_node("TextureButtonArrastre")
+
+	if habitacion_actual == 2:
+		boton_arrastre.mouse_filter = Control.MOUSE_FILTER_STOP
+	else:
+		boton_arrastre.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	if habitacion_actual != 2:
 		pingu.salir_de_la_cama()
@@ -70,6 +77,7 @@ func cargar_habitacion():
 	if habitacion.has_node("Plato"):
 		var plato = habitacion.get_node("Plato")
 		plato.configurar_pingu(pingu)
+		plato.cargar_estado()
 
 	boton_izquierdo.raise()
 	boton_derecho.raise()
@@ -77,11 +85,13 @@ func cargar_habitacion():
 func _on_BotonIzquierdo_pressed():
 	if habitacion_actual > 0:
 		habitacion_actual -= 1
+		Tiempo.ultima_habitacion = habitacion_actual
 		cargar_habitacion()
 
 func _on_BotonDerecho_pressed():
 	if habitacion_actual < habitaciones.size() - 1:
 		habitacion_actual += 1
+		Tiempo.ultima_habitacion = habitacion_actual
 		cargar_habitacion()
 
 func _on_Pingu_termino_de_acostarse():
@@ -98,9 +108,9 @@ func actualizar_monedas():
 func _on_BotonTienda_pressed():
 	var escena_tienda = load("res://tscn/Tienda.tscn")
 	var tienda = escena_tienda.instance()
-	add_child(tienda)
+	$CanvasLayer.add_child(tienda)
 
 func _on_BotonDinero_pressed():
 	var escena_pension = load("res://tscn/Pension.tscn")
 	var pension = escena_pension.instance()
-	add_child(pension)
+	$CanvasLayer.add_child(pension)

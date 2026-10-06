@@ -3,10 +3,11 @@ extends Node
 const RUTA_GUARDADO = "user://save_data.json"
 
 signal energia_cambiada
+signal necesidades_cambiaron
 
-var hambre = 50
-var higiene = 51
-var energia = 98
+var hambre = 100
+var higiene = 100
+var energia = 100
 var diversion = 100
 
 var pingu_durmiendo = false
@@ -16,15 +17,20 @@ func _ready():
 
 func modificar_hambre(cantidad):
 	hambre = clamp(hambre + cantidad, 0, 100)
+	emit_signal("necesidades_cambiaron")
 
 func modificar_higiene(cantidad):
 	higiene = clamp(higiene + cantidad, 0, 100)
+	emit_signal("necesidades_cambiaron")
 
 func modificar_energia(cantidad):
 	energia = clamp(energia + cantidad, 0, 100)
+	emit_signal("energia_cambiada")
+	emit_signal("necesidades_cambiaron")
 
 func modificar_diversion(cantidad):
 	diversion = clamp(diversion + cantidad, 0, 100)
+	emit_signal("necesidades_cambiaron")
 
 func pasar_tiempo(segundos):
 	var minutos = int(segundos / 60)

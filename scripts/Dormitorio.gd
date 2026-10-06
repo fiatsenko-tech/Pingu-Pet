@@ -4,10 +4,14 @@ var pingu_acostado = false
 var pingu_durmiendo = false
 
 onready var lampara = $Lampara
+onready var oscuridad = get_tree().current_scene.get_node("CanvasLayer/Oscuridad")
 
 func _ready():
 	lampara.connect("estado_cambiado", self, "_on_Lampara_estado_cambiado")
+	
 	Necesidades.connect("energia_cambiada", self, "_on_energia_cambiada")
+	
+	oscuridad.visible = not lampara.encendida
 
 func _on_energia_cambiada():
 	if pingu_durmiendo and Necesidades.energia >= 100:
@@ -42,6 +46,12 @@ func pingu_termino_de_despertar():
 	print("Pingu terminó de despertar. Sigue acostado: ", pingu_acostado)
 
 func _on_Lampara_estado_cambiado():
+	
+	if lampara.encendida:
+		oscuridad.visible = false
+	else:
+		oscuridad.visible = true
+	
 	if not pingu_acostado:
 		return
 	
@@ -64,3 +74,4 @@ func _on_Lampara_estado_cambiado():
 
 func _exit_tree():
 	Necesidades.pingu_durmiendo = false
+	oscuridad.visible = false

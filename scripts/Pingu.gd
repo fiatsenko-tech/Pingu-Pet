@@ -12,6 +12,8 @@ var sobre_cama = false
 var posicion_cama = Vector2.ZERO
 var puede_arrastrarse = true
 
+var estado_visual_necesidad = ""
+
 signal llego_al_destino
 signal termino_de_acostarse
 signal termino_de_despertar
@@ -25,37 +27,46 @@ onready var animated_sprite_espuma = $AnimatedSpriteEspuma
 func _ready():
 	area_comida.connect("area_entered", self, "_on_area_comida_entered")
 	area_comida.connect("area_exited", self, "_on_area_comida_exited")
-	
-	area_arrastre.connect("input_event", self, "_on_area_arrastre_input_event")
+
 	area_arrastre.connect("area_entered", self, "_on_area_arrastre_area_entered")
 	area_arrastre.connect("area_exited", self, "_on_area_arrastre_area_exited")
 	
 	animated_sprite.connect("animation_finished", self, "_on_animation_finished")
 	
-	animated_sprite.play("idle")
+	Necesidades.connect("necesidades_cambiaron", self, "_on_necesidades_cambiaron")
+	
+	actualizar_estado_visual()
 	animated_sprite_espuma.play("sin_espuma")
+	
+	
 
-func _on_area_arrastre_input_event(viewport, event, shape_idx):
-	if habitacion_actual != 2:
-		return
+func _on_necesidades_cambiaron():
+	actualizar_estado_visual()
+
+func actualizar_estado_visual():
+	if Necesidades.higiene < 30:
+		estado_visual_necesidad = "Pingu Sucio"
 	
-	if not puede_arrastrarse:
-		return
+	elif Necesidades.hambre < 30:
+		estado_visual_necesidad = "Pingu Hambreado"
 	
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT:
-			if event.pressed:
-				arrastrando = true
-				posicion_anterior = global_position
-				offset_arrastre = global_position - get_global_mouse_position()
-			else:
-				arrastrando = false
-				
-				if sobre_cama:
-					global_position = posicion_cama
-					quedarse_en_cama()
-				else:
-					global_position = posicion_anterior
+	elif Necesidades.energia < 30:
+		estado_visual_necesidad = "Pingu Cansado"
+	
+	elif Necesidades.diversion < 30:
+		estado_visual_necesidad = "Pingu Aburrido"
+	
+	else:
+		estado_visual_necesidad = "idle"
+	
+	if animated_sprite.animation == "idle" or \
+	   animated_sprite.animation == "Pingu Sucio" or \
+	   animated_sprite.animation == "Pingu Hambreado" or \
+	   animated_sprite.animation == "Pingu Cansado" or \
+	   animated_sprite.animation == "Pingu Aburrido" or \
+	   animated_sprite.animation == "siendo_arrastrado":
+		
+		animated_sprite.play(estado_visual_necesidad)
 
 func quedarse_en_cama():
 	puede_arrastrarse = false
@@ -98,6 +109,7 @@ func _process(delta):
 func _on_animation_finished():
 	if animated_sprite.animation == "comer":
 		animated_sprite.play("idle")
+		actualizar_estado_visual()
 	
 	elif animated_sprite.animation == "acostarse":
 		print("Animación acostarse terminó")
@@ -146,7 +158,7 @@ func despertar():
 
 func salir_de_la_cama():
 	puede_arrastrarse = true
-	animated_sprite.play("idle")
+	actualizar_estado_visual()
 
 func ocultar_espuma():
 	animated_sprite_espuma.hide()
@@ -154,3 +166,28 @@ func ocultar_espuma():
 func mostrar_espuma():
 	if nivel_espuma > 0:
 		animated_sprite_espuma.show()
+
+
+func _on_TextureButtonArrastre_gui_input(event):
+	if habitacion_actual != 2:
+		return
+	
+	if not puede_arrastrarse:
+		return
+	
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT:
+			if event.pressed:
+				arrastrando = true
+				animated_sprite.play("siendo_arrastrado")
+				posicion_anterior = global_position
+				offset_arrastre = global_position - get_global_mouse_position()
+			else:
+				arrastrando = false
+				
+				if sobre_cama:
+					global_position = posicion_cama
+					quedarse_en_cama()
+				else:
+					global_position = posicion_anterior
+					actualizar_estado_visual()
