@@ -5,11 +5,11 @@
 [ext_resource path="res://scripts/Dormitorio.gd" type="Script" id=3]
 [ext_resource path="res://assets/fondos/ChatGPT Image 20 sept 2026, 07_50_09 p.m..png" type="Texture" id=4]
 [ext_resource path="res://assets/Dormitorio/ChatGPT Image 21 sept 2026, 09_58_15 p.m..png" type="Texture" id=5]
-[ext_resource path="res://assets/Dormitorio/ChatGPT Image 21 sept 2026, 10_27_41 p.m..png" type="Texture" id=6]
+[ext_resource path="res://Assets Definitivos/Dormitorio/New Piskel-1.png(12).png" type="Texture" id=6]
 [ext_resource path="res://Assets Definitivos/Botones y labels/Habitaciones-1.png.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 174, 102 )
+extents = Vector2( 147.625, 83.25 )
 
 [node name="Dormitorio" type="Control"]
 anchor_right = 1.0
@@ -35,7 +35,7 @@ position = Vector2( 385, 1100 )
 position = Vector2( 764, 1006 )
 
 [node name="Sprite" type="Sprite" parent="Cama"]
-scale = Vector2( 0.420288, 0.502258 )
+scale = Vector2( 10.0723, 9.79224 )
 texture = ExtResource( 6 )
 
 [node name="AreaCama" type="Area2D" parent="Cama"]
@@ -43,7 +43,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cama/AreaCama"]
-position = Vector2( 7, -20 )
+position = Vector2( 1, -61 )
 shape = SubResource( 2 )
 
 [node name="PosicionPinguCama" type="Position2D" parent="Cama"]

@@ -1,9 +1,13 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scripts/Pingu.gd" type="Script" id=1]
+[ext_resource path="res://Assets Definitivos/Dormitorio/Pingu dormido/Sofa-2.png.png" type="Texture" id=2]
 [ext_resource path="res://assets/Pingu Idle/New Piskel-4.png.png" type="Texture" id=3]
+[ext_resource path="res://Assets Definitivos/Dormitorio/Pingu dormido/Sofa-1.png.png" type="Texture" id=4]
 [ext_resource path="res://assets/Pingu Idle/New Piskel-1.png.png" type="Texture" id=5]
+[ext_resource path="res://Assets Definitivos/Dormitorio/Pingu dormido/Sofa-1.png(2).png" type="Texture" id=6]
 [ext_resource path="res://Assets Definitivos/PinguEstados/New Piskel-3.png(4).png" type="Texture" id=7]
+[ext_resource path="res://Assets Definitivos/Dormitorio/Pingu dormido/Sofa-1.png(1).png" type="Texture" id=8]
 [ext_resource path="res://Assets Definitivos/Baño/New Piskel-5.png.png" type="Texture" id=10]
 [ext_resource path="res://Assets Definitivos/Baño/New Piskel-3.png(1).png" type="Texture" id=11]
 [ext_resource path="res://Assets Definitivos/Baño/New Piskel-2.png(1).png" type="Texture" id=12]
@@ -46,8 +50,8 @@ animations = [ {
 "name": "abrir_ojos",
 "speed": 5.0
 }, {
-"frames": [  ],
-"loop": true,
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
 "name": "acostado",
 "speed": 5.0
 }, {
@@ -58,6 +62,11 @@ animations = [ {
 }, {
 "frames": [  ],
 "loop": true,
+"name": "bailar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
 "name": "cerrar_ojos",
 "speed": 5.0
 }, {
@@ -66,10 +75,10 @@ animations = [ {
 "name": "comer",
 "speed": 3.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 6 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "durmiendo",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 3 ) ],
 "loop": false,
@@ -99,10 +108,15 @@ animations = [ {
 "name": "espuma_3",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": false,
 "name": "espuma_4",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": false,
+"name": "espuma_5",
+"speed": 5.0
 }, {
 "frames": [  ],
 "loop": true,
@@ -138,7 +152,7 @@ animation = "idle"
 [node name="AnimatedSpriteEspuma" type="AnimatedSprite" parent="."]
 scale = Vector2( 8, 8 )
 frames = SubResource( 4 )
-animation = "espuma_2"
+animation = "espuma_5"
 
 [node name="AreaComida" type="Area2D" parent="."]
 
