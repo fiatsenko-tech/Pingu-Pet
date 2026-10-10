@@ -2,16 +2,16 @@
 
 [ext_resource path="res://scripts/Juego.gd" type="Script" id=1]
 [ext_resource path="res://tscn/Pingu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-6.png-2.png.png" type="Texture" id=3]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-6.png-3.png.png" type="Texture" id=4]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-6.png-4.png.png" type="Texture" id=5]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-1.png(15).png" type="Texture" id=3]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-2.png(7).png" type="Texture" id=4]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-1.png(14).png" type="Texture" id=5]
 [ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-7.png-1.png.png" type="Texture" id=6]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-6.png-1.png.png" type="Texture" id=7]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-6.png-1.png(1).png" type="Texture" id=8]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-1.png(9)-1.png(1).png" type="Texture" id=7]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-6.png-1.png-1.png-1.png.png" type="Texture" id=8]
 [ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://tscn/IndicadorNecesidades.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-6.png-1.png-1.png.png" type="Texture" id=11]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-1.png(9).png" type="Texture" id=12]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-1.png(13).png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 45
@@ -44,21 +44,21 @@ margin_bottom = 122.0
 [node name="BotonIzquierdo" type="TextureButton" parent="UI"]
 anchor_right = 15.132
 anchor_bottom = 4.525
-margin_left = -110.0
-margin_top = 802.0
-margin_right = -705.28
-margin_bottom = 631.0
-rect_scale = Vector2( 15, 15 )
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 4 )
+margin_left = -149.0
+margin_top = 1544.0
+margin_right = -735.28
+margin_bottom = 1382.0
+rect_scale = Vector2( 9, 9 )
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 5 )
 
 [node name="BotonDerecho" type="TextureButton" parent="UI"]
-margin_left = 766.0
-margin_top = 808.0
-margin_right = 776.0
-margin_bottom = 818.0
-rect_scale = Vector2( 15, 15 )
-texture_normal = ExtResource( 5 )
+margin_left = 775.0
+margin_top = 1544.0
+margin_right = 794.0
+margin_bottom = 1563.0
+rect_scale = Vector2( 9, 9 )
+texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
 
 [node name="BotonDinero" type="TextureButton" parent="UI"]
@@ -84,12 +84,12 @@ anchor_left = -3.404
 anchor_top = -1.869
 anchor_right = -3.404
 anchor_bottom = -1.869
-margin_left = 876.16
-margin_top = 16.76
-margin_right = 898.16
-margin_bottom = 38.76
-rect_scale = Vector2( 8.5, 8.5 )
-texture_normal = ExtResource( 7 )
+margin_left = 8.16
+margin_top = 189.76
+margin_right = 35.16
+margin_bottom = 216.76
+rect_scale = Vector2( 6.3, 6.3 )
+texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 11 )
 
 [node name="IndicadorNecesidades" parent="UI" instance=ExtResource( 10 )]
@@ -99,12 +99,12 @@ margin_right = 893.0
 margin_bottom = -53.0
 
 [node name="BotonRecompensa" type="TextureButton" parent="UI"]
-margin_left = 735.0
-margin_top = 143.0
-margin_right = 762.0
-margin_bottom = 170.0
-rect_scale = Vector2( 6.949, 6.949 )
-texture_normal = ExtResource( 12 )
+margin_left = 732.0
+margin_top = -66.0
+margin_right = 763.0
+margin_bottom = -35.0
+rect_scale = Vector2( 5.9, 5.9 )
+texture_normal = ExtResource( 7 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

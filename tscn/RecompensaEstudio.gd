@@ -2,7 +2,7 @@ extends Control
 
 var monedas_ganadas = 0
 
-const TIEMPO_RECOMPENSA = 24 * 60 * 60
+const TIEMPO_RECOMPENSA = 60
 var tiempo_reclamo = 0
 
 onready var titulo = $Panel/Titulo

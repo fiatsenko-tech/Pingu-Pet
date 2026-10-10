@@ -61,6 +61,7 @@ texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
 
 [node name="TextureButton2" type="TextureButton" parent="PanelPension"]
+visible = false
 margin_left = 889.0
 margin_top = 23.0
 margin_right = 905.0
@@ -70,6 +71,7 @@ texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 6 )
 
 [node name="LabelTiempo" type="Label" parent="PanelPension"]
+visible = false
 margin_left = 122.0
 margin_top = 1042.0
 margin_right = 1040.0
