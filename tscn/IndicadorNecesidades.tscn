@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/IndicadorNecesidades.gd" type="Script" id=1]
-[ext_resource path="res://Nuevos Assets/Botones/New Piskel-1.png(17).png" type="Texture" id=2]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-2.png(8).png" type="Texture" id=2]
 [ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets Definitivos/Iconos/New Piskel-3.png.png" type="Texture" id=4]
 [ext_resource path="res://Assets Definitivos/Iconos/New Piskel-1.png(8).png" type="Texture" id=5]
 [ext_resource path="res://Assets Definitivos/Iconos/New Piskel-1.png(9).png" type="Texture" id=6]
 [ext_resource path="res://Assets Definitivos/Iconos/New Piskel-2.png.png" type="Texture" id=7]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-1.png(18).png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -47,7 +48,6 @@ margin_bottom = 1795.0
 custom_constants/separation = 196
 
 [node name="IndicadorHambre" type="Control" parent="Contenedor"]
-margin_right = 50.0
 margin_bottom = 207.0
 
 [node name="Circulo" type="TextureRect" parent="Contenedor/IndicadorHambre"]
@@ -58,11 +58,19 @@ margin_bottom = 32.0
 rect_scale = Vector2( 6, 6 )
 texture = ExtResource( 2 )
 
+[node name="Marco" type="TextureRect" parent="Contenedor/IndicadorHambre"]
+margin_left = -8.0
+margin_top = 1.0
+margin_right = 32.0
+margin_bottom = 41.0
+rect_scale = Vector2( 6, 6 )
+texture = ExtResource( 8 )
+
 [node name="Icono" type="TextureRect" parent="Contenedor/IndicadorHambre"]
-margin_left = 44.0
-margin_top = 39.0
-margin_right = 88.0
-margin_bottom = 82.0
+margin_left = 48.0
+margin_top = 38.0
+margin_right = 92.0
+margin_bottom = 81.0
 rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
@@ -87,12 +95,20 @@ margin_bottom = 32.0
 rect_scale = Vector2( 6, 6 )
 texture = ExtResource( 2 )
 
+[node name="Marco2" type="TextureRect" parent="Contenedor/IndicadorHigiene"]
+margin_left = -12.0
+margin_top = 1.0
+margin_right = 28.0
+margin_bottom = 41.0
+rect_scale = Vector2( 6, 6 )
+texture = ExtResource( 8 )
+
 [node name="Icono" type="TextureRect" parent="Contenedor/IndicadorHigiene"]
-margin_left = 37.0
-margin_top = 25.0
-margin_right = 47.0
-margin_bottom = 35.0
-rect_scale = Vector2( 10, 10 )
+margin_left = 46.0
+margin_top = 30.0
+margin_right = 56.0
+margin_bottom = 40.0
+rect_scale = Vector2( 9.023, 9.023 )
 texture = ExtResource( 7 )
 
 [node name="Porcentaje" type="Label" parent="Contenedor/IndicadorHigiene"]
@@ -116,11 +132,19 @@ margin_bottom = 32.0
 rect_scale = Vector2( 6, 6 )
 texture = ExtResource( 2 )
 
+[node name="Marco3" type="TextureRect" parent="Contenedor/IndicadorEnergia"]
+margin_left = -17.0
+margin_top = 1.0
+margin_right = 23.0
+margin_bottom = 41.0
+rect_scale = Vector2( 6, 6 )
+texture = ExtResource( 8 )
+
 [node name="Icono" type="TextureRect" parent="Contenedor/IndicadorEnergia"]
-margin_left = 23.0
-margin_top = 41.0
-margin_right = 33.0
-margin_bottom = 51.0
+margin_left = 30.0
+margin_top = 38.0
+margin_right = 40.0
+margin_bottom = 48.0
 rect_scale = Vector2( 9, 9 )
 texture = ExtResource( 5 )
 
@@ -138,23 +162,33 @@ margin_right = 588.0
 margin_bottom = 207.0
 
 [node name="Circulo" type="TextureRect" parent="Contenedor/IndicadorDiversion"]
-margin_right = 15.0
-margin_bottom = 15.0
+margin_left = -25.0
+margin_top = 1.0
+margin_right = 7.0
+margin_bottom = 33.0
 rect_scale = Vector2( 6, 6 )
 texture = ExtResource( 2 )
 
+[node name="Marco4" type="TextureRect" parent="Contenedor/IndicadorDiversion"]
+margin_left = -25.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 41.0
+rect_scale = Vector2( 6, 6 )
+texture = ExtResource( 8 )
+
 [node name="Icono" type="TextureRect" parent="Contenedor/IndicadorDiversion"]
-margin_left = 51.0
-margin_top = 37.0
-margin_right = 61.0
-margin_bottom = 47.0
+margin_left = 35.0
+margin_top = 39.0
+margin_right = 45.0
+margin_bottom = 49.0
 rect_scale = Vector2( 9, 9 )
 texture = ExtResource( 4 )
 
 [node name="Porcentaje" type="Label" parent="Contenedor/IndicadorDiversion"]
-margin_left = 39.0
-margin_top = 132.0
-margin_right = 147.0
-margin_bottom = 177.0
+margin_left = 20.0
+margin_top = 135.0
+margin_right = 128.0
+margin_bottom = 180.0
 custom_fonts/font = SubResource( 4 )
 text = "100%"

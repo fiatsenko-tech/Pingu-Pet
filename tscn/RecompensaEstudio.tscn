@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-5.png(1)-1.png(1)-1.png.png" type="Texture" id=2]
 [ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://tscn/RecompensaEstudio.gd" type="Script" id=4]
-[ext_resource path="res://Assets Definitivos/Botones y labels/pixil-frame-0(8).png" type="Texture" id=5]
+[ext_resource path="res://Nuevos Assets/Botones2/pixil-frame-0(9).png" type="Texture" id=5]
 [ext_resource path="res://Assets Definitivos/Botones y labels/pixil-frame-0(7).png" type="Texture" id=6]
 [ext_resource path="res://Assets Definitivos/Botones y labels/pixil-frame-0(2).png" type="Texture" id=7]
 [ext_resource path="res://Assets Definitivos/Botones y labels/pixil-frame-0(1).png" type="Texture" id=8]
@@ -56,11 +56,11 @@ margin_bottom = 1095.0
 rect_scale = Vector2( 4.786, 4.786 )
 
 [node name="BotonAccept" type="TextureButton" parent="Panel"]
-margin_left = 324.0
-margin_top = 1302.0
-margin_right = 359.0
-margin_bottom = 1317.0
-rect_scale = Vector2( 12, 12 )
+margin_left = 294.0
+margin_top = 1254.0
+margin_right = 345.0
+margin_bottom = 1271.0
+rect_scale = Vector2( 10, 10 )
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 

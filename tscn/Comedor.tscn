@@ -4,16 +4,16 @@
 [ext_resource path="res://Nuevos Assets/Comedor/Decoración pixel art para comedor-1.png.png" type="Texture" id=2]
 [ext_resource path="res://scripts/Refrigerador.gd" type="Script" id=3]
 [ext_resource path="res://Assets Definitivos/comedor/New Piskel-1.png(11).png" type="Texture" id=4]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-6.png-4.png.png" type="Texture" id=5]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-6.png-1.png(1).png" type="Texture" id=6]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-6.png-2.png.png" type="Texture" id=7]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-6.png-3.png.png" type="Texture" id=8]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-6.png-4.png-1.png.png" type="Texture" id=5]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-6.png-4.png-1.png(3).png" type="Texture" id=6]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-6.png-4.png-1.png(1).png" type="Texture" id=7]
+[ext_resource path="res://Nuevos Assets/Botones/New Piskel-6.png-4.png-1.png(2).png" type="Texture" id=8]
 [ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://Nuevos Assets/Comedor/New Piskel-1.png(22).png" type="Texture" id=10]
 [ext_resource path="res://scripts/Plato.gd" type="Script" id=11]
 [ext_resource path="res://Assets Definitivos/comedor/ChatGPT Image 25 sept 2026, 05_59_02 p.m..png" type="Texture" id=12]
 [ext_resource path="res://Nuevos Assets/Comedor/Decoración pixel art para comedor-1.png(2).png" type="Texture" id=13]
-[ext_resource path="res://Assets Definitivos/Botones y labels/Habitaciones-2.png.png" type="Texture" id=17]
+[ext_resource path="res://Nuevos Assets/Comedor/Decoración pixel art para comedor-1.png(1).png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 42
@@ -35,13 +35,8 @@ mouse_filter = 2
 texture = ExtResource( 1 )
 stretch_mode = 7
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 611, 287 )
-scale = Vector2( 7.26429, 6.41786 )
-texture = ExtResource( 17 )
-
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 852, 584 )
+position = Vector2( 872, 553 )
 scale = Vector2( 3.98958, 3.42708 )
 texture = ExtResource( 10 )
 
@@ -49,6 +44,11 @@ texture = ExtResource( 10 )
 position = Vector2( 960.805, 976 )
 scale = Vector2( 0.648119, 0.642 )
 texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 501, 619 )
+scale = Vector2( 0.622222, 0.546667 )
+texture = ExtResource( 14 )
 
 [node name="PosicionPingu" type="Position2D" parent="."]
 position = Vector2( 581, 1094 )
@@ -62,7 +62,7 @@ rect_scale = Vector2( 0.354, 0.354 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Refrigerador"]
-position = Vector2( 451.977, 762.712 )
+position = Vector2( 381.356, 810.734 )
 scale = Vector2( 1.11135, 1.14272 )
 texture = ExtResource( 12 )
 
@@ -71,8 +71,8 @@ position = Vector2( 582, 1173 )
 z_index = 1
 
 [node name="Sprite" type="Sprite" parent="Mesa"]
-position = Vector2( -45, 147 )
-scale = Vector2( 0.774, 0.82 )
+position = Vector2( -31, 141 )
+scale = Vector2( 0.757476, 0.82 )
 texture = ExtResource( 13 )
 
 [node name="Plato" type="Node2D" parent="."]
@@ -101,21 +101,21 @@ custom_fonts/font = SubResource( 1 )
 text = "x 3"
 
 [node name="BotonIzquierda" type="TextureButton" parent="Plato"]
-margin_left = 92.0
-margin_top = 64.0
-margin_right = 102.0
-margin_bottom = 74.0
+margin_left = 81.0
+margin_top = 66.0
+margin_right = 91.0
+margin_bottom = 76.0
 rect_scale = Vector2( 9, 9 )
 texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
 
 [node name="BotonDerecha" type="TextureButton" parent="Plato"]
-margin_left = -220.0
-margin_top = 62.0
-margin_right = -210.0
-margin_bottom = 72.0
+margin_left = -210.0
+margin_top = 68.0
+margin_right = -200.0
+margin_bottom = 78.0
 rect_scale = Vector2( 9, 9 )
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 8 )
 
 [connection signal="pressed" from="Refrigerador" to="Refrigerador" method="_on_Refrigerador_pressed"]

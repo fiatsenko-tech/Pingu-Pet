@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Assets Definitivos/Dormitorio/New Piskel-1.png(10).png" type="Texture" id=1]
+[ext_resource path="res://Nuevos Assets/Dormitorio/Muebles de dormitorio en pixel art(1)-2.png.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Lampara.gd" type="Script" id=2]
 [ext_resource path="res://scripts/Dormitorio.gd" type="Script" id=3]
 [ext_resource path="res://Nuevos Assets/fondo/Fondo_Pingu_Pet_270x480.png" type="Texture" id=4]
-[ext_resource path="res://assets/Dormitorio/ChatGPT Image 21 sept 2026, 09_58_15 p.m..png" type="Texture" id=5]
-[ext_resource path="res://Assets Definitivos/Dormitorio/New Piskel-1.png(12).png" type="Texture" id=6]
-[ext_resource path="res://Assets Definitivos/Botones y labels/Habitaciones-1.png.png" type="Texture" id=7]
+[ext_resource path="res://Nuevos Assets/Dormitorio/Set de muebles pixel art para dormitorio-2.png.png" type="Texture" id=5]
+[ext_resource path="res://Nuevos Assets/Dormitorio/Muebles de dormitorio en pixel art(1)-1.png.png" type="Texture" id=6]
+[ext_resource path="res://Nuevos Assets/Dormitorio/Marco.png" type="Texture" id=7]
+[ext_resource path="res://Nuevos Assets/Dormitorio/Set de muebles pixel art para dormitorio-1.png.png" type="Texture" id=8]
+[ext_resource path="res://Nuevos Assets/Dormitorio/Escritorio.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 147.625, 83.25 )
@@ -19,24 +21,44 @@ script = ExtResource( 3 )
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -190.0
+margin_right = 3.0
+margin_bottom = 8.0
 mouse_filter = 2
 texture = ExtResource( 4 )
 expand = true
+stretch_mode = 7
 
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 608, 284 )
-scale = Vector2( 7.80714, 7.65714 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 489, 651 )
+scale = Vector2( 0.772727, 0.823529 )
 texture = ExtResource( 7 )
 
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 984, 750 )
+scale = Vector2( 1.07556, 1.26625 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 971, 1395 )
+scale = Vector2( 0.776613, 0.749697 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 223, 1503 )
+scale = Vector2( 0.968085, 0.974441 )
+texture = ExtResource( 9 )
+
 [node name="PosicionPingu" type="Position2D" parent="."]
-position = Vector2( 385, 1100 )
+position = Vector2( 636, 1335 )
 
 [node name="Cama" type="Node2D" parent="."]
-position = Vector2( 764, 1006 )
+position = Vector2( 477, 994 )
 
 [node name="Sprite" type="Sprite" parent="Cama"]
-scale = Vector2( 10.0723, 9.79224 )
-texture = ExtResource( 6 )
+position = Vector2( -4.00002, 16 )
+scale = Vector2( 0.770429, 1.03678 )
+texture = ExtResource( 5 )
 
 [node name="AreaCama" type="Area2D" parent="Cama"]
 collision_layer = 8
@@ -49,21 +71,16 @@ shape = SubResource( 2 )
 [node name="PosicionPinguCama" type="Position2D" parent="Cama"]
 position = Vector2( 8, -26 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 169, 969 )
-scale = Vector2( 0.341607, 0.255084 )
-texture = ExtResource( 5 )
-
 [node name="Lampara" type="TextureButton" parent="."]
-margin_left = 91.0
-margin_top = 640.0
-margin_right = 243.0
-margin_bottom = 874.0
+margin_left = 71.0
+margin_top = 772.0
+margin_right = 197.0
+margin_bottom = 941.0
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="Lampara"]
-position = Vector2( 77, 124 )
-scale = Vector2( 4.7381, 5.5 )
+[node name="Sprite2" type="Sprite" parent="Lampara"]
+position = Vector2( 72, 184 )
+scale = Vector2( 0.770417, 0.785438 )
 texture = ExtResource( 1 )
 
 [connection signal="pressed" from="Lampara" to="Lampara" method="_on_Lampara_pressed"]
