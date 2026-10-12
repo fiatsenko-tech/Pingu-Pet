@@ -19,7 +19,7 @@
 [ext_resource path="res://Nuevos Assets/Baño/Accesorios de baño en pixel art-2.png.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 108, 89.125 )
+extents = Vector2( 67, 66.5625 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -28,14 +28,14 @@ animations = [ {
 "name": "agua",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 12 ) ],
 "loop": false,
 "name": "sin_agua",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 117, 168.75 )
+extents = Vector2( 65.5, 71.5 )
 
 [node name="Bano" type="Control"]
 anchor_right = 1.0
@@ -101,45 +101,36 @@ texture = ExtResource( 6 )
 position = Vector2( 543, 1195 )
 
 [node name="Jabon" type="Node2D" parent="."]
-visible = false
-position = Vector2( 903, 1388 )
+position = Vector2( 380, 1070 )
 script = ExtResource( 13 )
 
 [node name="Sprite" type="Sprite" parent="Jabon"]
-position = Vector2( -7.00006, -16 )
-scale = Vector2( 0.234762, 0.241966 )
+position = Vector2( -77.2613, -61.5 )
+scale = Vector2( 0.140325, 0.155955 )
 texture = ExtResource( 10 )
 
 [node name="Area2D" type="Area2D" parent="Jabon"]
-visible = false
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jabon/Area2D"]
-visible = false
-position = Vector2( -4, -3.875 )
+position = Vector2( -75, -51 )
 shape = SubResource( 1 )
 
 [node name="Ducha" type="Node2D" parent="."]
-visible = false
 position = Vector2( 216, 577 )
 script = ExtResource( 15 )
 
-[node name="Sprite" type="Sprite" parent="Ducha"]
-scale = Vector2( 4.828, 5 )
-texture = ExtResource( 12 )
-
 [node name="AnimatedSpriteAgua" type="AnimatedSprite" parent="Ducha"]
-scale = Vector2( 5, 5 )
+position = Vector2( 60.1, 38.575 )
+scale = Vector2( 3.08542, 3.75885 )
 frames = SubResource( 3 )
 animation = "sin_agua"
 
 [node name="Area2D" type="Area2D" parent="Ducha"]
-visible = false
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ducha/Area2D"]
-visible = false
-position = Vector2( 10, 19.25 )
+position = Vector2( 69, 17 )
 shape = SubResource( 2 )

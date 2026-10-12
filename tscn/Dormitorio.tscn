@@ -30,8 +30,8 @@ expand = true
 stretch_mode = 7
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 489, 651 )
-scale = Vector2( 0.772727, 0.823529 )
+position = Vector2( 477.25, 651 )
+scale = Vector2( 0.843939, 0.823529 )
 texture = ExtResource( 7 )
 
 [node name="Sprite4" type="Sprite" parent="."]

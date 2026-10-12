@@ -4,10 +4,10 @@
 [ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-5.png(1)-1.png(1)-1.png.png" type="Texture" id=2]
 [ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://tscn/RecompensaEstudio.gd" type="Script" id=4]
-[ext_resource path="res://Nuevos Assets/Botones2/pixil-frame-0(9).png" type="Texture" id=5]
+[ext_resource path="res://Nuevos Assets/Botones2/pixilart-drawing(1).png" type="Texture" id=5]
 [ext_resource path="res://Assets Definitivos/Botones y labels/pixil-frame-0(7).png" type="Texture" id=6]
 [ext_resource path="res://Assets Definitivos/Botones y labels/pixil-frame-0(2).png" type="Texture" id=7]
-[ext_resource path="res://Assets Definitivos/Botones y labels/pixil-frame-0(1).png" type="Texture" id=8]
+[ext_resource path="res://Nuevos Assets/Botones2/pixil-frame-0(7).png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.298039, 0.654902, 0.866667, 0.627451 )
@@ -60,7 +60,7 @@ margin_left = 294.0
 margin_top = 1254.0
 margin_right = 345.0
 margin_bottom = 1271.0
-rect_scale = Vector2( 10, 10 )
+rect_scale = Vector2( 9, 9 )
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
 
@@ -74,12 +74,11 @@ text = "¡Has ganado
   400 monedas!"
 
 [node name="BotonClaim" type="TextureButton" parent="Panel"]
-visible = false
-margin_left = 331.0
-margin_top = 1107.0
-margin_right = 366.0
-margin_bottom = 1122.0
-rect_scale = Vector2( 12, 12 )
+margin_left = 260.0
+margin_top = 1128.0
+margin_right = 318.0
+margin_bottom = 1145.0
+rect_scale = Vector2( 9, 9 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 7 )
 

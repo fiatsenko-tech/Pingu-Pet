@@ -1,34 +1,42 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts/Discoteca.gd" type="Script" id=1]
-[ext_resource path="res://Nuevos Assets/Disco/Parlante-1.png.png" type="Texture" id=2]
+[ext_resource path="res://Nuevos Assets/Disco/Parlante/Altavoz pixel art neón retro-1.png(1).png" type="Texture" id=2]
 [ext_resource path="res://Nuevos Assets/Disco/Pared disco neón y suelo de mosaicos.png" type="Texture" id=3]
-[ext_resource path="res://Nuevos Assets/Disco/BolaBrillante-2.png.png" type="Texture" id=4]
+[ext_resource path="res://Nuevos Assets/Disco/Bola/Sprite de bola disco en cuatro marcos-1.png.png" type="Texture" id=4]
+[ext_resource path="res://Nuevos Assets/Disco/Bola/Sprite de bola disco en cuatro marcos-3.png.png" type="Texture" id=5]
+[ext_resource path="res://Nuevos Assets/Disco/Bola/Sprite de bola disco en cuatro marcos-2.png.png" type="Texture" id=6]
+[ext_resource path="res://Nuevos Assets/Disco/Bola/Sprite de bola disco en cuatro marcos-4.png.png" type="Texture" id=7]
+[ext_resource path="res://Nuevos Assets/Disco/Parlante/Altavoz pixel art neón retro-2.png.png" type="Texture" id=8]
+[ext_resource path="res://Nuevos Assets/Disco/Decoracion/Sin título-4.png.png" type="Texture" id=9]
+[ext_resource path="res://Nuevos Assets/Disco/LuzLed/Sin título-1.png(2).png" type="Texture" id=10]
+[ext_resource path="res://Nuevos Assets/Disco/Decoracion/Sin título-1.png(1).png" type="Texture" id=11]
+[ext_resource path="res://Nuevos Assets/Disco/Decoracion/Sin título-1.png.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 2 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "sonando",
-"speed": 5.0
+"speed": 4.5
 } ]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "girar",
-"speed": 5.0
+"speed": 8.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "girar_loop",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [  ],
 "loop": true,
@@ -46,48 +54,61 @@ margin_bottom = 1928.0
 texture = ExtResource( 3 )
 stretch_mode = 7
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 347, 1073 )
+scale = Vector2( 1.12428, 1.22522 )
+texture = ExtResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 312, 700 )
+texture = ExtResource( 11 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 1008, 1511 )
+scale = Vector2( 1.10841, 1.07838 )
+texture = ExtResource( 12 )
+
 [node name="LucesLed" type="TextureButton" parent="."]
-margin_left = 806.0
-margin_top = 733.0
-margin_right = 1078.0
-margin_bottom = 913.0
+margin_left = 70.0
+margin_top = 279.0
+margin_right = 380.0
+margin_bottom = 487.0
+texture_normal = ExtResource( 10 )
 
 [node name="PosicionPingu" type="Position2D" parent="."]
-position = Vector2( 547, 1321 )
+position = Vector2( 391, 1344 )
 
 [node name="Parlante" type="TextureButton" parent="."]
-margin_left = 21.0
-margin_top = 861.0
-margin_right = 47.0
-margin_bottom = 907.0
+margin_left = 803.0
+margin_top = 808.0
+margin_right = 831.0
+margin_bottom = 852.0
 rect_scale = Vector2( 9, 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Parlante"]
+position = Vector2( 23, 22.5554 )
+scale = Vector2( 0.0498264, 0.0485006 )
 frames = SubResource( 1 )
 animation = "idle"
 
-[node name="Sprite" type="Sprite" parent="Parlante"]
-position = Vector2( 14.8889, 9.94444 )
-scale = Vector2( 1.04762, 1.18783 )
-texture = ExtResource( 2 )
-
 [node name="BolaBrillante" type="TextureButton" parent="."]
-margin_left = 372.0
+margin_left = 445.0
 margin_top = 1.0
-margin_right = 404.0
-margin_bottom = 33.0
-rect_scale = Vector2( 10, 10 )
-texture_normal = ExtResource( 4 )
+margin_right = 681.0
+margin_bottom = 251.0
+rect_scale = Vector2( 0.873, 0.873 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="BolaBrillante"]
+position = Vector2( 201.604, 143.184 )
+scale = Vector2( 0.590249, 0.552068 )
 frames = SubResource( 2 )
 animation = "girar_loop"
 
 [node name="ComienzoFiesta" type="TextureButton" parent="."]
-margin_left = 627.0
-margin_top = 38.0
-margin_right = 1047.0
-margin_bottom = 295.0
+margin_left = 666.0
+margin_top = 415.0
+margin_right = 990.0
+margin_bottom = 608.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

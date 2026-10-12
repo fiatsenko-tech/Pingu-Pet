@@ -37,6 +37,10 @@ rect_scale = Vector2( 11, 11 )
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 4 )
 
+[node name="FondoLista" type="TextureRect" parent="PanelTienda"]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelTienda"]
 anchor_top = 0.01875
 anchor_bottom = 0.119271
