@@ -9,7 +9,7 @@
 [ext_resource path="res://Nuevos Assets/Baño/Accesorios de baño en pixel art-7.png.png" type="Texture" id=7]
 [ext_resource path="res://Assets Definitivos/Baño/ducha/Ducha-1.png(1)-3.png.png" type="Texture" id=8]
 [ext_resource path="res://Assets Definitivos/Baño/ducha/Ducha-1.png(1)-1.png.png" type="Texture" id=9]
-[ext_resource path="res://Assets Definitivos/Baño/Barra de jabón pixelada sobre fondo transparente.png" type="Texture" id=10]
+[ext_resource path="res://Nuevos Assets/Baño/pixil-frame-0(29).png" type="Texture" id=10]
 [ext_resource path="res://scripts/Bano.gd" type="Script" id=11]
 [ext_resource path="res://Assets Definitivos/Baño/Ducha-1.png(1).png" type="Texture" id=12]
 [ext_resource path="res://scripts/Jabon.gd" type="Script" id=13]
@@ -19,7 +19,7 @@
 [ext_resource path="res://Nuevos Assets/Baño/Accesorios de baño en pixel art-2.png.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 67, 66.5625 )
+extents = Vector2( 64.5, 60.2812 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -35,7 +35,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 65.5, 71.5 )
+extents = Vector2( 71.25, 66.75 )
 
 [node name="Bano" type="Control"]
 anchor_right = 1.0
@@ -58,29 +58,29 @@ __meta__ = {
 }
 
 [node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 588, 584 )
+position = Vector2( 595, 579 )
 scale = Vector2( 0.780992, 0.783167 )
 texture = ExtResource( 17 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 592, 925 )
-scale = Vector2( 0.851667, 0.96375 )
+[node name="Sprite2" type="Sprite" parent="Sprite3"]
+position = Vector2( 5.1217, 435.412 )
+scale = Vector2( 1.09049, 1.23058 )
 texture = ExtResource( 7 )
 
-[node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( 890, 976 )
-scale = Vector2( 0.877509, 0.975 )
-texture = ExtResource( 2 )
-
-[node name="Sprite5" type="Sprite" parent="."]
-position = Vector2( 879, 657 )
-scale = Vector2( 0.719696, 0.659091 )
-texture = ExtResource( 3 )
-
 [node name="Sprite6" type="Sprite" parent="."]
-position = Vector2( 882, 479 )
+position = Vector2( 910, 478 )
 scale = Vector2( 0.95, 0.94 )
 texture = ExtResource( 4 )
+
+[node name="Sprite5" type="Sprite" parent="Sprite6"]
+position = Vector2( -3.1579, 189.362 )
+scale = Vector2( 0.757575, 0.701161 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="Sprite6"]
+position = Vector2( 8.42108, 528.723 )
+scale = Vector2( 0.923694, 1.03723 )
+texture = ExtResource( 2 )
 
 [node name="Sprite7" type="Sprite" parent="."]
 position = Vector2( 971, 1338 )
@@ -88,25 +88,27 @@ scale = Vector2( 0.795652, 0.814332 )
 texture = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 218, 781 )
+position = Vector2( 222, 769 )
 scale = Vector2( 0.802963, 0.887778 )
 texture = ExtResource( 16 )
 
 [node name="Sprite8" type="Sprite" parent="."]
-position = Vector2( 102, 1280 )
+position = Vector2( 98, 1424 )
 scale = Vector2( 1.00184, 0.967506 )
 texture = ExtResource( 6 )
 
 [node name="PosicionPingu" type="Position2D" parent="."]
-position = Vector2( 543, 1195 )
+position = Vector2( 532, 1223 )
 
 [node name="Jabon" type="Node2D" parent="."]
-position = Vector2( 380, 1070 )
+position = Vector2( 298, 991 )
+z_index = 1
 script = ExtResource( 13 )
 
 [node name="Sprite" type="Sprite" parent="Jabon"]
-position = Vector2( -77.2613, -61.5 )
-scale = Vector2( 0.140325, 0.155955 )
+position = Vector2( 1.24999, -10.1785 )
+scale = Vector2( 0.599432, 0.565895 )
+z_index = 1
 texture = ExtResource( 10 )
 
 [node name="Area2D" type="Area2D" parent="Jabon"]
@@ -114,16 +116,18 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jabon/Area2D"]
-position = Vector2( -75, -51 )
+position = Vector2( 2, -4 )
 shape = SubResource( 1 )
 
 [node name="Ducha" type="Node2D" parent="."]
-position = Vector2( 216, 577 )
+position = Vector2( 267, 559 )
+z_index = 1
 script = ExtResource( 15 )
 
 [node name="AnimatedSpriteAgua" type="AnimatedSprite" parent="Ducha"]
-position = Vector2( 60.1, 38.575 )
+position = Vector2( 42, 24 )
 scale = Vector2( 3.08542, 3.75885 )
+z_index = 1
 frames = SubResource( 3 )
 animation = "sin_agua"
 
@@ -132,5 +136,5 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ducha/Area2D"]
-position = Vector2( 69, 17 )
+position = Vector2( 50.25, 8.25 )
 shape = SubResource( 2 )

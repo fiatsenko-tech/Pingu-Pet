@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets Definitivos/Botones y labels/BotonesNuevos/pixil-frame-0(5).png" type="Texture" id=2]
 [ext_resource path="res://Nuevos Assets/Botones2/pixil-frame-0(9).png" type="Texture" id=3]
 [ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets Definitivos/Botones y labels/BotonesNuevos/pixil-frame-0(2).png" type="Texture" id=6]
+[ext_resource path="res://Nuevos Assets/Botones2/pixil-frame-0(24).png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -61,7 +61,7 @@ margin_right = 357.0
 margin_bottom = 1164.0
 rect_scale = Vector2( 9, 9 )
 texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
 
 [node name="PanelMensaje" type="Panel" parent="."]
 margin_left = 69.0

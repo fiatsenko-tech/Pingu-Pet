@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts/Discoteca.gd" type="Script" id=1]
 [ext_resource path="res://Nuevos Assets/Disco/Parlante/Altavoz pixel art neón retro-1.png(1).png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Nuevos Assets/Disco/LuzLed/Sin título-1.png(2).png" type="Texture" id=10]
 [ext_resource path="res://Nuevos Assets/Disco/Decoracion/Sin título-1.png(1).png" type="Texture" id=11]
 [ext_resource path="res://Nuevos Assets/Disco/Decoracion/Sin título-1.png.png" type="Texture" id=12]
+[ext_resource path="res://Nuevos Assets/Disco/LuzLed/Sin título-2.png.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -75,6 +76,13 @@ margin_right = 380.0
 margin_bottom = 487.0
 texture_normal = ExtResource( 10 )
 
+[node name="LucesLed2" type="TextureButton" parent="."]
+margin_left = 669.0
+margin_top = 283.0
+margin_right = 979.0
+margin_bottom = 491.0
+texture_normal = ExtResource( 13 )
+
 [node name="PosicionPingu" type="Position2D" parent="."]
 position = Vector2( 391, 1344 )
 
@@ -105,10 +113,10 @@ frames = SubResource( 2 )
 animation = "girar_loop"
 
 [node name="ComienzoFiesta" type="TextureButton" parent="."]
-margin_left = 666.0
-margin_top = 415.0
-margin_right = 990.0
-margin_bottom = 608.0
+margin_left = 469.0
+margin_top = 603.0
+margin_right = 793.0
+margin_bottom = 796.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

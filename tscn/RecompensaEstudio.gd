@@ -6,44 +6,71 @@ const TIEMPO_RECOMPENSA = 60
 var tiempo_reclamo = 0
 
 onready var titulo = $Panel/Titulo
-onready var horas = $Panel/SpinBoxHoras
 onready var boton_accept = $Panel/BotonAccept
 onready var label_recompensa = $Panel/LabelRecompensa
 onready var boton_claim = $Panel/BotonClaim
 onready var label_tiempo = $Panel/LabelTiempo
 onready var boton_cerrar = $Panel/BotonCerrar
 
+onready var label_horas = $Panel/LabelHoras
+onready var boton_disminuir = $Panel/BotonDisminuir
+onready var boton_aumentar = $Panel/BotonAumentar
+onready var espacio_label = $Panel/Espacio
+
+onready var cadenas = $Panel/Cadenas
+onready var reloj = $Panel/Reloj
+onready var tiempo_espera = $Panel/TiempoRestante
+
+var horas_estudiadas = 1
+
 func _ready():
-	horas.min_value = 1
-	horas.max_value = 8
-	horas.step = 1
-	horas.value = 1
+	label_horas.text = str(horas_estudiadas)
+
+	boton_disminuir.connect("pressed", self, "_on_BotonDisminuir_pressed")
+	boton_aumentar.connect("pressed", self, "_on_BotonAumentar_pressed")
 
 	label_recompensa.hide()
 	boton_claim.hide()
 	label_tiempo.hide()
+	
+	cadenas.hide()
+	reloj.hide()
+	reloj.stop()
+	tiempo_espera.hide()
 
 	boton_accept.connect("pressed", self, "_on_BotonAccept_pressed")
 	boton_cerrar.connect("pressed", self, "_on_BotonCerrar_pressed")
 	boton_claim.connect("pressed", self, "_on_BotonClaim_pressed")
-	
+
 	cargar_estado()
 	actualizar_estado()
 
 func _process(delta):
 	actualizar_estado()
 
+func _on_BotonDisminuir_pressed():
+	if horas_estudiadas > 1:
+		horas_estudiadas -= 1
+		actualizar_label_horas()
+
+func _on_BotonAumentar_pressed():
+	if horas_estudiadas < 8:
+		horas_estudiadas += 1
+		actualizar_label_horas()
+
+func actualizar_label_horas():
+	label_horas.text = str(horas_estudiadas)
+
 func _on_BotonAccept_pressed():
-	var horas_estudiadas = int(horas.value)
 	monedas_ganadas = horas_estudiadas * 250
 
-	titulo.hide()
-	horas.hide()
+	label_horas.hide()
+	boton_disminuir.hide()
+	boton_aumentar.hide()
 	boton_accept.hide()
+	espacio_label.hide()
 
-	label_recompensa.text = "¡Has ganado \n\n" \
-							+ str(monedas_ganadas) \
-							+ " monedas!"
+	label_recompensa.text = "¡Has ganado \n" + str(monedas_ganadas) + " monedas!"
 	label_recompensa.show()
 	boton_claim.show()
 
@@ -79,6 +106,9 @@ func guardar_estado():
 
 func actualizar_estado():
 	if tiempo_reclamo == 0:
+		cadenas.hide()
+		reloj.hide()
+		reloj.stop()
 		return
 
 	var tiempo_actual = OS.get_unix_time()
@@ -89,26 +119,54 @@ func actualizar_estado():
 		tiempo_reclamo = 0
 
 		titulo.show()
-		horas.show()
+		label_horas.show()
+		boton_disminuir.show()
+		boton_aumentar.show()
 		boton_accept.show()
-
+		espacio_label.show()
+		
+		boton_disminuir.disabled = false
+		boton_aumentar.disabled = false
+		boton_accept.disabled = false
+		
 		label_recompensa.hide()
 		boton_claim.hide()
 		label_tiempo.hide()
+		
+		cadenas.hide()
+		reloj.hide()
+		reloj.stop()
+		tiempo_espera.hide()
 
 		return
 
 	var horas_restantes = int(tiempo_restante / 3600)
 	var minutos_restantes = int((tiempo_restante % 3600) / 60)
 
-	label_tiempo.text = "Vuelve dentro de: \n\n" + str(horas_restantes) + " horas, " + str(minutos_restantes) + " minutos"
+	
 	label_tiempo.show()
 
-	horas.hide()
-	boton_accept.hide()
+	titulo.show()
+	label_horas.show()
+	boton_disminuir.show()
+	boton_aumentar.show()
+	boton_accept.show()
+	espacio_label.show()
+	
+	boton_aumentar.disabled = true
+	boton_disminuir.disabled = true
+	boton_accept.disabled = true
+	
 	label_recompensa.hide()
 	boton_claim.hide()
 	
+	cadenas.show()
+	reloj.show()
+	tiempo_espera.show()
+	
+	if not reloj.is_playing():
+		reloj.play()
+		
 func cargar_estado():
 	var archivo = File.new()
 

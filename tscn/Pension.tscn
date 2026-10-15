@@ -1,35 +1,58 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://ArchivoBlack-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-5.png(1)-1.png(1).png" type="Texture" id=2]
+[ext_resource path="res://Nuevos Assets/Panel Pension/Plantilla de interfaz pixel art vacía.png" type="Texture" id=2]
 [ext_resource path="res://scripts/Pension.gd" type="Script" id=3]
 [ext_resource path="res://Nuevos Assets/Botones2/pixil-frame-0(7).png" type="Texture" id=4]
-[ext_resource path="res://Assets Definitivos/Botones y labels/pixil-frame-0(2).png" type="Texture" id=5]
-[ext_resource path="res://Assets Definitivos/Botones y labels/New Piskel-5.png(1)-1.png(1)-1.png.png" type="Texture" id=6]
+[ext_resource path="res://Nuevos Assets/Botones2/pixil-frame-0(26).png" type="Texture" id=5]
+[ext_resource path="res://Nuevos Assets/Botones2/pixilart-drawing-1.png.png" type="Texture" id=6]
+[ext_resource path="res://Nuevos Assets/Botones2/pixilart-drawing.png" type="Texture" id=7]
+[ext_resource path="res://Nuevos Assets/Panel Pension/pixil-frame-0(6).png" type="Texture" id=8]
+[ext_resource path="res://Nuevos Assets/Panel Pension/pixil-frame-0(7).png" type="Texture" id=9]
+[ext_resource path="res://Nuevos Assets/Tiempo/New Piskel-2.png.png" type="Texture" id=10]
+[ext_resource path="res://Nuevos Assets/Tiempo/New Piskel-3.png.png" type="Texture" id=11]
+[ext_resource path="res://Nuevos Assets/Tiempo/New Piskel-1.png.png" type="Texture" id=12]
+[ext_resource path="res://Nuevos Assets/Tiempo/New Piskel-4.png.png" type="Texture" id=13]
+[ext_resource path="res://Nuevos Assets/Panel Tienda/pixil-frame-0(36).png" type="Texture" id=14]
+[ext_resource path="res://Nuevos Assets/Panel Recompensa/pixil-frame-0(37).png" type="Texture" id=15]
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.298039, 0.654902, 0.866667, 0.627451 )
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0941176, 0.623529, 0.941176, 0.627451 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "tiempo",
+"speed": 2.0
+} ]
 
 [sub_resource type="DynamicFont" id=1]
 size = 85
-outline_size = 8
+outline_size = 10
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 60
+size = 52
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 70
+size = 58
 outline_size = 7
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 51
+size = 37
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 55
 outline_size = 6
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
@@ -40,57 +63,120 @@ script = ExtResource( 3 )
 [node name="PanelPension" type="Panel" parent="."]
 margin_right = 1080.0
 margin_bottom = 1920.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 6 )
 
-[node name="Label" type="Label" parent="PanelPension"]
-margin_left = 92.0
-margin_top = 399.0
-margin_right = 994.0
-margin_bottom = 588.0
-custom_fonts/font = SubResource( 1 )
-text = "Child support for 
-our son (500 Coins)"
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelPension"]
+margin_left = -31.0
+margin_top = 156.0
+margin_right = 1102.0
+margin_bottom = 1761.0
+texture = ExtResource( 2 )
+
+[node name="Reloj" type="AnimatedSprite" parent="PanelPension"]
+position = Vector2( 160, 1231 )
+scale = Vector2( 3.67045, 3.69001 )
+frames = SubResource( 7 )
+animation = "tiempo"
 
 [node name="TextureButton" type="TextureButton" parent="PanelPension"]
-margin_left = 283.0
-margin_top = 1222.0
-margin_right = 341.0
-margin_bottom = 1239.0
+margin_left = 265.0
+margin_top = 970.0
+margin_right = 323.0
+margin_bottom = 987.0
 rect_scale = Vector2( 9, 9 )
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 5 )
 
 [node name="TextureButton2" type="TextureButton" parent="PanelPension"]
-margin_left = 889.0
-margin_top = 23.0
-margin_right = 905.0
-margin_bottom = 39.0
-rect_scale = Vector2( 11, 11 )
-texture_normal = ExtResource( 2 )
+margin_left = 886.0
+margin_top = 191.0
+margin_right = 914.0
+margin_bottom = 219.0
+rect_scale = Vector2( 5.5, 5.5 )
+texture_normal = ExtResource( 7 )
 texture_pressed = ExtResource( 6 )
 
+[node name="Label" type="Label" parent="PanelPension"]
+margin_left = 344.0
+margin_top = 248.0
+margin_right = 713.0
+margin_bottom = 341.0
+custom_fonts/font = SubResource( 1 )
+text = "Pensión"
+
 [node name="LabelTiempo" type="Label" parent="PanelPension"]
-margin_left = 122.0
-margin_top = 1042.0
-margin_right = 1040.0
-margin_bottom = 1109.0
+margin_left = 151.0
+margin_top = 1322.0
+margin_right = 964.0
+margin_bottom = 1389.0
 custom_fonts/font = SubResource( 3 )
 text = "2  días, 6 horas, 50 minutos"
 
 [node name="LabelDisponible" type="Label" parent="PanelPension"]
-margin_left = 237.0
-margin_top = 948.0
-margin_right = 875.0
-margin_bottom = 1105.0
+visible = false
+margin_left = 151.0
+margin_top = 1213.0
+margin_right = 968.0
+margin_bottom = 1450.0
 custom_fonts/font = SubResource( 4 )
-text = "You can claim 
-child support :))"
+text = "Ya puedes reclamar 
+la pensión bro, es mi 
+sueldo mínimo :,v"
 
-[node name="Label2" type="Label" parent="PanelPension"]
-margin_left = 105.0
-margin_top = 621.0
-margin_right = 912.0
-margin_bottom = 744.0
+[node name="NinePatchRect3" type="NinePatchRect" parent="PanelPension"]
+margin_left = 151.0
+margin_top = 476.0
+margin_right = 504.0
+margin_bottom = 796.0
+texture = ExtResource( 9 )
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="PanelPension"]
+margin_left = 480.0
+margin_top = 452.0
+margin_right = 950.0
+margin_bottom = 759.0
+texture = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="PanelPension/NinePatchRect2"]
+margin_left = 54.0
+margin_top = 37.0
+margin_right = 470.0
+margin_bottom = 274.0
 custom_fonts/font = SubResource( 5 )
-text = "Use the money to buy food,
- not beer."
+text = "Recibe 500 pesos 
+cada 3 días. 
+Usa la plata para 
+comprarme comida, 
+no cervezas."
+
+[node name="Cadenas" type="NinePatchRect" parent="PanelPension"]
+margin_left = 295.0
+margin_top = 970.0
+margin_right = 781.0
+margin_bottom = 1026.0
+rect_rotation = 11.1
+texture = ExtResource( 15 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelPension/Cadenas"]
+margin_left = 451.015
+margin_top = -38.5515
+margin_right = 901.015
+margin_bottom = 19.4485
+rect_rotation = 155.4
+texture = ExtResource( 15 )
+
+[node name="TiempoRestante" type="Label" parent="PanelPension"]
+margin_left = 231.0
+margin_top = 1197.0
+margin_right = 660.0
+margin_bottom = 1248.0
+custom_fonts/font = SubResource( 8 )
+text = "Tiempo restante:"
+
+[node name="TextureRect" type="TextureRect" parent="PanelPension"]
+margin_left = 151.0
+margin_top = 209.0
+margin_right = 861.0
+margin_bottom = 929.0
+rect_scale = Vector2( 0.234, 0.234 )
+texture = ExtResource( 14 )
